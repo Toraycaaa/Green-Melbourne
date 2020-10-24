@@ -9,8 +9,12 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
     <!--import css-->
     <link href="./trees.css">
+    
+    <script src='https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css' rel='stylesheet' />
+
 </head>
-<body>
+<body style='background-color: #222222;'>
     <!--nav-->
     <nav class="ui inverted attached segment">
         <!--container-->
@@ -36,10 +40,60 @@
                 </div>
         </div>
     </nav>
+
+    
+
     
     <!--body-->
-    <div class="ui container">
-        <p>body</p>
+    <div class="ui container" >
+        <!--Home-->
+        <div class="ui container" style='background-image: url(http://melbourneurbanforestvisual.com.au/images/UF_landing.png);'>
+            <br />
+            <br />
+            <div class="ui container">
+                <h1 style="color: whitesmoke;">Explore Melbourne's</h1>
+                <h1 style="color: whitesmoke;">Urban Forest</h1>
+                <br />
+                <p style="color: #CCCCC1;">The City of Melbourne maintains more than 70,000 trees. This website enables you to</p>
+                <p style="color:#CCCCC1;">explore this dataset and some of the challenges facing Melbourne’s Urban Forest.</p>
+            </div>
+            <br />
+            <br />
+            <div class="ui container">
+                <button class="ui inverted olive basic button">
+                    <span style="color: #76AD3A;">Explore the</span><span style='font-weight: bold;color:#76AD3A'>Map</span>
+                </button>&nbsp;&nbsp;
+                <button class="ui inverted olive basic button">
+                    <span style="color: #76AD3A;">Learn about the </span><span style='font-weight: bold;color:#76AD3A'>Issues</span>
+                </button>&nbsp;&nbsp;
+                <button class="ui inverted olive basic button">
+                    <span style="color: #76AD3A;">Get </span><span style='font-weight: bold;color:#76AD3A'>Involved</span>
+                </button>&nbsp;&nbsp;
+            </div>
+            <br />
+            <div class="ui container">
+                <i class="arrow inverted right icon"></i><a href="https://www.melbourne.vic.gov.au/community/greening-the-city/urban-forest/Pages/urban-forest.aspx">Find out more about the Urban Forest Strategy</a>
+                <br />
+                <br />
+                <br />
+            </div>
+
+
+
+
+
+        
+        <!--map-->
+        <div class="ui container">
+            
+                <div class="ui inverted secondary pointing menu">
+                  <a class="active item">
+                    Drag map, click icons for details
+                </div>
+              
+            
+            <div id='map' style='height: 500px;'></div>
+        </div>  
     </div>
 
 
@@ -54,6 +108,9 @@
             <p>Copyright 😁 2020 Designed by Toraycaaa</p>
         
     </footer>
+
+    <script src="./trees.js">
+    </script>
     
 </body>
 </html>
