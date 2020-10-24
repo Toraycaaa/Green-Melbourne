@@ -26,13 +26,10 @@
                 <!--menu-->
                 <div class="three wide column">
                     <div class="ui inverted secondary menu">
-                        <a class="item olive">
-                            Home
-                        </a>
-                        <a class="item olive">
+                        <a class="item olive" id="jump_to_map">
                             Map
                         </a>
-                        <a class="item olive">
+                        <a class="item olive" href="#map_location">
                             Statistic
                         </a>
                         
@@ -60,9 +57,12 @@
             <br />
             <br />
             <div class="ui container">
-                <button class="ui inverted olive basic button">
-                    <span style="color: #76AD3A;">Explore the</span><span style='font-weight: bold;color:#76AD3A'>Map</span>
-                </button>&nbsp;&nbsp;
+                <a href="#map_location">
+                    <button class="ui inverted olive basic button" >
+                        <span style="color: #76AD3A;" >Explore the </span><span style='font-weight: bold;color:#76AD3A'>Map</span>
+                    </button>
+                </a>&nbsp;&nbsp;
+                
                 <button class="ui inverted olive basic button">
                     <span style="color: #76AD3A;">Learn about the </span><span style='font-weight: bold;color:#76AD3A'>Issues</span>
                 </button>&nbsp;&nbsp;
@@ -88,7 +88,7 @@
 
         
         <!--map-->
-        <h2 class="ui olive header">MAP</h2>
+        <h2 class="ui olive header" id="map_location">MAP</h2>
         <hr style="border:1 dashed #987cb9" width="100%" color=#76AD3A SIZE=1>
         <h3 style="color:#989898">Individual tree data for City of Melbourne trees is presented below. Pan and Zoom into different areas of Melbourne, click on tree symbols to reveal details, and select between different locations and filters.</h3>
         <br />
@@ -116,6 +116,15 @@
     </footer>
 
     <script src="./trees.js">
+    </script>
+
+    <!--jump function-->
+    <script type="text/javascript">
+        window.onload = function(){
+            document.querySelector("#jump_to_map").onclick = function(){
+                document.querySelector("#map_location").scrollIntoView(true);
+            }
+        }
     </script>
     
 </body>
