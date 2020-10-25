@@ -17,6 +17,8 @@
 </head>
 <body style='background-color: #222222;'>
     <!--nav-->
+        
+
     <nav class="ui inverted attached segment">
         <!--container-->
         <div class="ui container">
@@ -36,6 +38,7 @@
                         
                     </div>
                 </div>
+            </div>
         </div>
     </nav>
 
@@ -89,6 +92,7 @@
 
         
         <!--map-->
+        
         <h2 class="ui olive header" id="map_location">MAP</h2>
         <hr style="border:1 dashed #987cb9" width="100%" color=#76AD3A SIZE=1>
         <h3 style="color:#989898">Individual tree data for City of Melbourne trees is presented below. Pan and Zoom into different areas of Melbourne, click on tree symbols to reveal details, and select between different locations and filters.</h3>
@@ -97,15 +101,20 @@
             <div class="ui inverted secondary pointing menu">
                 <a class="active item">
                 Drag map, click icons for details
+                </a>
             </div>
             
             <!--map-->
-            <div id='map' style='height: 500px;'></div>
+                        
+            <div id='map' style='height: 500px;'>
+            <nav id="menu"></nav>       
+            </div>
             <!--legend-->
             <h2 class="ui olive header">Map colours and symbols</h2>
             <h3 class="ui inverted header">Age Description</h3>
 
             <!--legend-->
+            
             <div class="ui grid">
                 <div class="five wide column">
                     <div class="ui middle aligned animated list" style="padding-left: 5px;">
@@ -140,6 +149,7 @@
                             </div>
                         </div>
                 </div>
+                
             </div>
 
             
@@ -161,7 +171,7 @@
         <br />
         <!--Tableau chart-->
         <div class="ui container">
-            <div class='tableauPlaceholder' id='viz1603460908310' style='position: relative'><noscript>
+            <div class='tableauPlaceholder' id='viz1603636061401' style='position: relative'><noscript>
                 <a href='#'>
                     <img alt='' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;As&#47;Assignment3_16034604091830&#47;Dashboard1&#47;1_rss.png' style='border: none' />
                 </a>
@@ -209,6 +219,7 @@
             }
         }
     </script>
-    
+    </div>
+   
 </body>
 </html>
