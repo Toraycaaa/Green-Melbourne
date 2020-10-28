@@ -83,3 +83,13 @@ body { margin: 0; padding: 0; }
 #menu a.active:hover {
 	background: #3074a4;
 }
+
+.ui.fixed.sticky + p {
+	margin-top: 39px;
+  }
+
+ nav {
+  position: sticky !important; 
+  position: -webkit-sticky !important;    
+  top: 0px !important; 
+}
