@@ -18,7 +18,6 @@
 <body style='background-color: #222222;'>
     <!--nav-->
         
-
     <nav class="ui inverted attached segment">
         <!--container-->
         <div class="ui container">
@@ -29,7 +28,7 @@
                 <!--menu-->
                 <div class="three wide column">
                     <div class="ui inverted secondary menu">
-                        <a class="item olive" id="jump_to_map">
+                        <a class="item olive" href="#map_location">
                             Map
                         </a>
                         <a class="item olive" href="#map_location">
@@ -99,58 +98,113 @@
         <br />
         <div class="ui container">   
             <div class="ui inverted secondary pointing menu">
-                <a class="active item">
-                Drag map, click icons for details
+                <a class="active item" id="popup">
+                    <i class="wrench icon"></i>&nbsp;
+                    Hover here to choose layers
                 </a>
-            </div>
-            
-            <!--map-->
-                        
-            <div id='map' style='height: 500px;'>
-            <div id="menu"></div>       
-            </div>
-            <!--legend-->
-            <h2 class="ui olive header">Map colours and symbols</h2>
-            <h3 class="ui inverted header">Age Description</h3>
 
-            <!--legend-->
-            
-            <div class="ui grid">
-                <div class="five wide column">
-                    <div class="ui middle aligned animated list" style="padding-left: 5px;">
-                        <div class="item">
-                          <img class="ui avatar image" src="./img/tree_new.svg">
-                          <div class="content">
-                            <div class="header m-color-white">New</div>
-                          </div>
-                        </div>
-                        <div class="item">
-                          <img class="ui avatar image" src="./img/tree_juvenile.svg">
-                          <div class="content">
-                            <div class="header m-color-white">Juvenile</div>
-                          </div>
-                        </div>
-                        <div class="item">
-                          <img class="ui avatar image" src="./img/tree_semimature.svg">
-                          <div class="content">
-                            <div class="header m-color-white">Semi-mature</div>
-                          </div>
-                        </div>
-                        <div class="item">
-                            <img class="ui avatar image" src="./img/tree_mature.svg">
-                            <div class="content">
-                              <div class="header m-color-white">Mature</div>
-                            </div>
-                          </div>
-                        <div class="item">
-                        <img class="ui avatar image" src="./img/tree_over_mature.svg">
-                            <div class="content">
-                                <div class="header m-color-white">Over-mature</div>
-                            </div>
-                        </div>
+                <a class="item" id="popup">
+                    Drag map, click icons for details
+                </a>
+
+                <div class="ui inverted fluid popup bottom left transition hidden">
+                <div class="ui four column relaxed divided grid">
+                    <div class="column">
+                    <h4 class="ui header">Age Description</h4>
+                    <div class="ui link list" id=age>
+                        
+                        <!-- <a class="item">Viscose</a> -->
+                    </div>
+                    </div>
+                    <div class="column">
+                    <h4 class="ui header">Size</h4>
+                    <div class="ui link list">
+                        <a class="item">Small</a>
+                        <a class="item">Medium</a>
+                        <a class="item">Large</a>
+                        <a class="item">Plus Sizes</a>
+                    </div>
+                    </div>
+                    <div class="column">
+                    <h4 class="ui header">Colors</h4>
+                    <div class="ui link list">
+                        <a class="item">Neutrals</a>
+                        <a class="item">Brights</a>
+                        <a class="item">Pastels</a>
+                    </div>
+                    </div>
+                    <div class="column">
+                    <h4 class="ui header">Types</h4>
+                    <div class="ui link list">
+                        <a class="item">Knitwear</a>
+                        <a class="item">Outerwear</a>
+                        <a class="item">Pants</a>
+                        <a class="item">Shoes</a>
+                    </div>
+                    </div>
                 </div>
-                
+                </div>
             </div>
+
+            <!--map-->     
+            <div id='map' style='height: 500px;'>
+            </div>
+
+            
+
+        
+            
+            
+
+            <h2 class="ui olive header">Map colours and symbols</h2>
+            <!--tabs-->
+            <div class="ui inverted secondary pointing menu">
+                <a class="item active" data-tab="first">Age Description</a>
+                <a class="item" data-tab="second">Second</a>
+                <a class="item" data-tab="third">Third</a>
+              </div>
+              <div class="ui inverted bottom attached tab segment active" data-tab="first">
+                <div class="ui middle aligned animated list" style="padding-left: 5px;">
+                    <div class="item">
+                      <img class="ui avatar image" src="./img/tree_new.svg">
+                      <div class="content">
+                        <div class="header m-color-white">New</div>
+                      </div>
+                    </div>
+                    <div class="item">
+                      <img class="ui avatar image" src="./img/tree_juvenile.svg">
+                      <div class="content">
+                        <div class="header m-color-white">Juvenile</div>
+                      </div>
+                    </div>
+                    <div class="item">
+                      <img class="ui avatar image" src="./img/tree_semimature.svg">
+                      <div class="content">
+                        <div class="header m-color-white">Semi-mature</div>
+                      </div>
+                    </div>
+                    <div class="item">
+                        <img class="ui avatar image" src="./img/tree_mature.svg">
+                        <div class="content">
+                          <div class="header m-color-white">Mature</div>
+                        </div>
+                    </div>
+                    <div class="item">
+                    <img class="ui avatar image" src="./img/tree_over_mature.svg">
+                        <div class="content">
+                            <div class="header m-color-white">Over-mature</div>
+                        </div>
+                    </div>
+                </div>
+              </div>
+              <div class="ui bottom attached tab segment" data-tab="second">
+                Second
+              </div>
+              <div class="ui bottom attached tab segment" data-tab="third">
+                Third
+              </div>
+            
+
 
             
             
@@ -208,18 +262,35 @@
         
     </footer>
 
-    <script src="./trees.js">
-    </script>
+    <script src="./trees.js"></script>
+    <!--jquery-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
 
    
+    <script th:inline="javascript">
+        //tabs
+        $('.menu .item')
+        .tab()
+        ;
 
-    <!--jump function-->
-    <script type="text/javascript">
-        window.onload = function(){
-            document.querySelector("#jump_to_map").onclick = function(){
-                document.querySelector("#map_location").scrollIntoView(true);
-            }
-        }
+        //dropdown
+        $('.ui.dropdown').dropdown({
+            on : 'hover'
+        });
+
+        $('#popup')
+        .popup({
+                inline     : true,
+                hoverable  : true,
+                delay: {
+                show: 800,
+                hide: 800
+                }
+            })
+      ;
+
+        
     </script>
     
     

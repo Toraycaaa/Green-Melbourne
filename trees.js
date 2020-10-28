@@ -47,7 +47,7 @@ map.on('load', function() {
         'source': 'New',
         'layout': {
             // make layer visible by default
-            'visibility': 'visible'
+            'visibility': 'none'
         },
         'paint': {
             'circle-radius': 8,
@@ -65,7 +65,7 @@ map.on('load', function() {
         'source': 'Juvenile',
         'layout': {
                 // make layer visible by default
-                'visibility': 'visible'
+                'visibility': 'none'
         },
         'paint': {
                 'circle-radius': 8,
@@ -83,7 +83,7 @@ map.on('load', function() {
         'source': 'Semi-mature',
         'layout': {
                 // make layer visible by default
-                'visibility': 'visible'
+                'visibility': 'none'
         },
         'paint': {
                 'circle-radius': 8,
@@ -101,7 +101,7 @@ map.on('load', function() {
         'source': 'Mature',
         'layout': {
                 // make layer visible by default
-                'visibility': 'visible'
+                'visibility': 'none'
         },
         'paint': {
                 'circle-radius': 8,
@@ -119,7 +119,7 @@ map.on('load', function() {
         'source': 'Over-mature',
         'layout': {
                 // make layer visible by default
-                'visibility': 'visible'
+                'visibility': 'none'
         },
         'paint': {
                 'circle-radius': 8,
@@ -136,13 +136,16 @@ map.on('load', function() {
 var toggleableLayerIds = ['New','Juvenile','Semi-mature','Mature','Over-mature',];
 
 // set up the corresponding toggle button for each layer
+
+
 for (var i = 0; i < toggleableLayerIds.length; i++) {
         var id = toggleableLayerIds[i];
 
         var link = document.createElement('a');
-        link.href = '#';
-        link.className = 'active';
+        // link.classList.add("active");
+        link.classList.add("item","active_map");
         link.textContent = id;
+        link.dataValue = id
 
         link.onclick = function (e) {
             var clickedLayer = this.textContent;
@@ -150,17 +153,21 @@ for (var i = 0; i < toggleableLayerIds.length; i++) {
             e.stopPropagation();
 
             var visibility = map.getLayoutProperty(clickedLayer, 'visibility');
+            console.log('可见吗？' + visibility)
 
             // toggle layer visibility by changing the layout object's visibility property
             if (visibility === 'visible') {
-                map.setLayoutProperty(clickedLayer, 'visibility', 'none');
-                this.className = '';
-            } else {
-                this.className = 'active';
-                map.setLayoutProperty(clickedLayer, 'visibility', 'visible');
-            }
+                    map.setLayoutProperty(clickedLayer, 'visibility', 'none');
+                    this.setAttribute("class","item");
+                    console.log('bukejian')
+                } else {
+                    this.setAttribute("class","active_map");
+                    this.classList.add("item")
+                    map.setLayoutProperty(clickedLayer, 'visibility', 'visible');
+                    console.log('kejian')
+                }
         };
 
-        var layers = document.getElementById('menu');
+        var layers = document.getElementById('age');
         layers.appendChild(link);
     }
