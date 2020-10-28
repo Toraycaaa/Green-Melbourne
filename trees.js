@@ -11,10 +11,10 @@ var divElement = document.getElementById('viz1603636061401');
 
 
 
-mapboxgl.accessToken = 'pk.eyJ1IjoidG9yYXljYWFhIiwiYSI6ImNrZXhmOTk4YzBqb2Mydm1mZzB3cnUxNWQifQ.tCTNSJ5vcc_-pF57gh7PVw';
+mapboxgl.accessToken = 'pk.eyJ1IjoiZXZhYWFhYXp6eiIsImEiOiJja2V4ZmtzdW8wMW5sMnBxdDQ2eThnYnZnIn0.1JHxDGUTHNqS5KROvKanHw';
         var map = new mapboxgl.Map({
             container: 'map',
-            style: 'mapbox://styles/toraycaaa/ckglzfuyl0hba19pl7zzgf6h2', // stylesheet location
+            style: 'mapbox://styles/evaaaaazzz/ckgs65jsw0wm019lyhptqj1t0', // stylesheet location
             
         });
 //zoom button
@@ -22,24 +22,11 @@ map.addControl(new mapboxgl.NavigationControl());
 
 //hover function
 map.on('load', function() {
-        
-    map.on('mousemove', function(e) {
-        let buildinginfo = map.queryRenderedFeatures(e.point, {
-            layers: ['New']  
-          });
-    
-        if (buildinginfo.length > 0) {
-        document.getElementById('info').innerHTML = '<p>' + buildinginfo[0].properties.status + 
-            '<p><em>' + buildinginfo[0].properties.address + '</em></p>';
-        } else {
-        document.getElementById('info').innerHTML = '<p>Hover over a shaded building for details.</p>';
-        }
-      });
             
     // add source and layer for museums
     map.addSource('New', {
             type: 'vector',
-            url: 'mapbox://evaaaaazzz.cq03g6y6'
+            url: 'mapbox://evaaaaazzz.ad4ib1uc'
     });
     map.addLayer({
         'id': 'New',
@@ -57,7 +44,7 @@ map.on('load', function() {
     });
     map.addSource('Juvenile', {
         type: 'vector',
-        url: 'mapbox://evaaaaazzz.cq03g6y6'
+        url: 'mapbox://evaaaaazzz.ad4ib1uc'
     });
     map.addLayer({
         'id': 'Juvenile',
@@ -75,7 +62,7 @@ map.on('load', function() {
     });
     map.addSource('Semi-mature', {
         type: 'vector',
-        url: 'mapbox://evaaaaazzz.cq03g6y6'
+        url: 'mapbox://evaaaaazzz.ad4ib1uc'
     });
     map.addLayer({
         'id': 'Semi-mature',
@@ -93,7 +80,7 @@ map.on('load', function() {
     });
     map.addSource('Mature', {
         type: 'vector',
-        url: 'mapbox://evaaaaazzz.cq03g6y6'
+        url: 'mapbox://evaaaaazzz.ad4ib1uc'
     });
     map.addLayer({
         'id': 'Mature',
@@ -111,7 +98,7 @@ map.on('load', function() {
     });
     map.addSource('Over-mature', {
         type: 'vector',
-        url: 'mapbox://evaaaaazzz.cq03g6y6'
+        url: 'mapbox://evaaaaazzz.ad4ib1uc'
     });
     map.addLayer({
         'id': 'Over-mature',
@@ -127,9 +114,44 @@ map.on('load', function() {
         },
         'source-layer': 'Over-mature'
     });
-        
+
+    // Create a popup, but don't add it to the map yet.
+    var popup = new mapboxgl.Popup({
+        closeButton: false,
+        closeOnClick: false
+    });
+    var Layers = ['New', 'Juvenile','Semi-mature','Mature','Over-mature'];
+    for (var i = 0; i < Layers.length; i++) {
+        map.on('mouseenter', Layers[i], function (e) {
+        // Change the cursor style as a UI indicator.
+        map.getCanvas().style.cursor = 'pointer';
+
+        var coordinates = e.features[0].geometry.coordinates.slice();
+        var description = 'Genus: ' + e.features[0].properties.Genus + 
+                        '<br>Family: ' + e.features[0].properties.Family+ 
+                        '<br>Date Planted: ' + e.features[0].properties.DatePlanted + 
+                        '<br>Useful Life Expectency: ' + e.features[0].properties.UsefulLifeExpectency + '<br>';
+
+        // Ensure that if the map is zoomed out such that multiple
+        // copies of the feature are visible, the popup appears
+        // over the copy being pointed to.
+        while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
+            coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
+        }
+
+        // Populate the popup and set its coordinates
+        // based on the feature found.
+        popup.setLngLat(coordinates).setHTML(description).addTo(map);
+        });
+
+        map.on('mouseleave', Layers[i], function () {
+            map.getCanvas().style.cursor = '';
+            popup.remove();
+        });
     
-  });
+    }    
+    
+});
 
 
 // enumerate ids of the layers
