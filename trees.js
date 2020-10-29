@@ -15,165 +15,165 @@ map.addControl(new mapboxgl.NavigationControl());
 map.on('load', function() {
             
     // add source and layer for museums
-    map.addSource('Trees', {
-            type: 'vector',
-            url: 'mapbox://evaaaaazzz.ad4ib1uc'
-    });
-    map.addLayer({
-        'id': 'New',
-        'type': 'Symbol',
-        'source': 'Trees',
-        'layout': {
-            // make layer visible by default
-            'visibility': 'none'
-        },
+    // map.addSource('Trees', {
+    //         type: 'vector',
+    //         url: 'mapbox://evaaaaazzz.ad4ib1uc'
+    // });
+    // map.addLayer({
+    //     'id': 'New',
+    //     'type': 'Symbol',
+    //     'source': 'Trees',
+    //     'layout': {
+    //         // make layer visible by default
+    //         'visibility': 'visible'
+    //     },
 
-    });
+    // });
 
-    map.addLayer({
-        'id': 'Juvenile',
-        'type': 'Symbol',
-        'source': 'Trees',
-        'layout': {
-                // make layer visible by default
-                'visibility': 'none'
-        },
+    // map.addLayer({
+    //     'id': 'Juvenile',
+    //     'type': 'Symbol',
+    //     'source': 'Trees',
+    //     'layout': {
+    //             // make layer visible by default
+    //             'visibility': 'visible'
+    //     },
 
-    });
+    // });
 
-    map.addLayer({
-        'id': 'Semi-mature',
-        'type': 'Symbol',
-        'source': 'Trees',
-        'layout': {
-                // make layer visible by default
-                'visibility': 'none'
-        },
+    // map.addLayer({
+    //     'id': 'Semi-mature',
+    //     'type': 'Symbol',
+    //     'source': 'Trees',
+    //     'layout': {
+    //             // make layer visible by default
+    //             'visibility': 'visible'
+    //     },
 
-    });
+    // });
 
-    map.addLayer({
-        'id': 'Mature',
-        'type': 'Symbol',
-        'source': 'Trees',
-        'layout': {
-                // make layer visible by default
-                'visibility': 'none'
-        },
+    // map.addLayer({
+    //     'id': 'Mature',
+    //     'type': 'Symbol',
+    //     'source': 'Trees',
+    //     'layout': {
+    //             // make layer visible by default
+    //             'visibility': 'visible'
+    //     },
        
-    });
-    map.addLayer({
-        'id': 'Over-mature',
-        'type': 'Symbol',
-        'source': 'Trees',
-        'layout': {
-                // make layer visible by default
-                'visibility': 'none'
-        },
+    // });
+    // map.addLayer({
+    //     'id': 'Over-mature',
+    //     'type': 'Symbol',
+    //     'source': 'Trees',
+    //     'layout': {
+    //             // make layer visible by default
+    //             'visibility': 'visible'
+    //     },
 
-    });
-    map.addLayer({
-        'id': 'Location-Park',
-        'type': 'Symbol',
-        'source': 'Trees',
-        'layout': {
-                // make layer visible by default
-                'visibility': 'none'
-        },
+    // });
+    // map.addLayer({
+    //     'id': 'Location-Park',
+    //     'type': 'Symbol',
+    //     'source': 'Trees',
+    //     'layout': {
+    //             // make layer visible by default
+    //             'visibility': 'visible'
+    //     },
 
-    });
-    map.addLayer({
-        'id': 'Location-Street',
-        'type': 'Symbol',
-        'source': 'Trees',
-        'layout': {
-            // make layer visible by default
-            'visibility': 'none'
-        },
-    });
-        map.addLayer({
-        'id': '2010-2020',
-        'type': 'Symbol',
-        'source': 'Trees',
-        'layout': {
-            // make layer visible by default
-            'visibility': 'none'
-        },
-    });
+    // });
+    // map.addLayer({
+    //     'id': 'Location-Street',
+    //     'type': 'Symbol',
+    //     'source': 'Trees',
+    //     'layout': {
+    //         // make layer visible by default
+    //         'visibility': 'visible'
+    //     },
+    // });
+    //     map.addLayer({
+    //     'id': '2010-2020',
+    //     'type': 'Symbol',
+    //     'source': 'Trees',
+    //     'layout': {
+    //         // make layer visible by default
+    //         'visibility': 'none'
+    //     },
+    // });
 
-    map.addLayer({
-        'id': '2000-2010',
-        'type': 'Symbol',
-        'source': 'Trees',
-        'layout': {
-            // make layer visible by default
-            'visibility': 'none'
-        },
-    });
+    // map.addLayer({
+    //     'id': '2000-2010',
+    //     'type': 'Symbol',
+    //     'source': 'Trees',
+    //     'layout': {
+    //         // make layer visible by default
+    //         'visibility': 'none'
+    //     },
+    // });
 
-    map.addLayer({
-        'id': 'Before 2000',
-        'type': 'Symbol',
-        'source': 'Trees',
-        'layout': {
-            // make layer visible by default
-            'visibility': 'none'
-        },
-    });
-    map.addLayer({
-        'id': 'Duplex-Clay Silt then Clay',
-        'type': 'Symbol',
-        'source': 'Soil',
-        'layout': {
-            // make layer visible by default
-            'visibility': 'none'
-        },
-    });
-    map.addLayer({
-        'id': 'Medium to Heavy Textured Clay with Sand',
-        'type': 'Symbol',
-        'source': 'Soil',
-        'layout': {
-            // make layer visible by default
-            'visibility': 'none'
-        },
-    });
-    map.addLayer({
-        'id': 'Deep Stratified Sand Silt Clay Gravel',
-        'type': 'Symbol',
-        'source': 'Soil',
-        'layout': {
-            // make layer visible by default
-            'visibility': 'none'
-        },
-    });
-    map.addLayer({
-        'id': 'Silt',
-        'type': 'Symbol',
-        'source': 'Soil',
-        'layout': {
-            // make layer visible by default
-            'visibility': 'none'
-        },
-    });
-    map.addLayer({
-        'id': 'Shallow Heavy Textured Clay',
-        'type': 'Symbol',
-        'source': 'Soil',
-        'layout': {
-            // make layer visible by default
-            'visibility': 'none'
-        },
-    });
-    map.addLayer({
-        'id': 'Sandy Loam',
-        'type': 'Symbol',
-        'source': 'Soil',
-        'layout': {
-            // make layer visible by default
-            'visibility': 'none'
-        },
-    });
+    // map.addLayer({
+    //     'id': 'Before 2000',
+    //     'type': 'Symbol',
+    //     'source': 'Trees',
+    //     'layout': {
+    //         // make layer visible by default
+    //         'visibility': 'none'
+    //     },
+    // });
+    // map.addLayer({
+    //     'id': 'Duplex-Clay Silt then Clay',
+    //     'type': 'Symbol',
+    //     'source': 'Soil',
+    //     'layout': {
+    //         // make layer visible by default
+    //         'visibility': 'none'
+    //     },
+    // });
+    // map.addLayer({
+    //     'id': 'Medium to Heavy Textured Clay with Sand',
+    //     'type': 'Symbol',
+    //     'source': 'Soil',
+    //     'layout': {
+    //         // make layer visible by default
+    //         'visibility': 'none'
+    //     },
+    // });
+    // map.addLayer({
+    //     'id': 'Deep Stratified Sand Silt Clay Gravel',
+    //     'type': 'Symbol',
+    //     'source': 'Soil',
+    //     'layout': {
+    //         // make layer visible by default
+    //         'visibility': 'none'
+    //     },
+    // });
+    // map.addLayer({
+    //     'id': 'Silt',
+    //     'type': 'Symbol',
+    //     'source': 'Soil',
+    //     'layout': {
+    //         // make layer visible by default
+    //         'visibility': 'none'
+    //     },
+    // });
+    // map.addLayer({
+    //     'id': 'Shallow Heavy Textured Clay',
+    //     'type': 'Symbol',
+    //     'source': 'Soil',
+    //     'layout': {
+    //         // make layer visible by default
+    //         'visibility': 'none'
+    //     },
+    // });
+    // map.addLayer({
+    //     'id': 'Sandy Loam',
+    //     'type': 'Symbol',
+    //     'source': 'Soil',
+    //     'layout': {
+    //         // make layer visible by default
+    //         'visibility': 'none'
+    //     },
+    // });
 
 
 
@@ -183,7 +183,7 @@ map.on('load', function() {
         closeButton: false,
         closeOnClick: false
     });
-    
+
     var Layers = ['New', 'Juvenile','Semi-mature','Mature','Over-mature'];
     for (var i = 0; i < Layers.length; i++) {
         map.on('mouseenter', Layers[i], function (e) {
