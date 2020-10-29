@@ -102,15 +102,21 @@
         </div>
         <h2 class="ui olive header" >MAP</h2>
         <hr style="border:1 dashed #987cb9" width="100%" color=#76AD3A SIZE=1>
-        <h3 style="color:#989898">Individual tree data for City of Melbourne trees is presented below. Pan and Zoom into different areas of Melbourne, click on tree symbols to reveal details, and select between different locations and filters.</h3>
+        <p style="font-size:17px; color:#989898">Explore the tree data - Individual tree data for City of Melbourne trees is presented below. <b>Pan</b> and <b>Zoom</b> into different areas of Melbourne city, <b>Hover</b> on the Filter Menu to select between different filters, and <b>Hover</b> on tree symbols to reveal details of the tree.</h3>
         <br />
         <div class="ui container">   
             <div class="ui inverted secondary pointing menu">
-                <a class="active item" id="popup">
+                <!-- <a class="active item" id="popup">
                     <i class="wrench icon"></i>&nbsp;
                     Hover here to choose layers
-                </a>
-
+                </a> -->
+                <button class="active item" id="popup">
+                  <!-- <i class="wrench icon"></i>&nbsp;  -->
+                  <a href="#menu" style="font-size: 16px;">
+                    &#9776;
+                  Filter Menu</a>
+                </button>
+                
                 <div class="ui inverted fluid popup bottom left transition hidden">
                 <div class="ui four column relaxed divided grid">
                     <div class="column">
