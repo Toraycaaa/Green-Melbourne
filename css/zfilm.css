@@ -1,0 +1,26 @@
+.navbar-default {
+  background-color: #404040;
+  border-color: #e7e7e7;
+}
+.navbar-header >.navbar-brand ,
+.navbar-header >.navbar-brand:hover,
+.navbar-header >.navbar-brand:focus{
+  background-color: transparent;
+  border-color: #000000;
+  color: #ffffff;
+}
+
+.navbar-default .navbar-nav > li > a {
+  color: #c8c8c8;
+  background-color: transparent;
+}
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus {
+  color: #ffffff;
+  background-color: transparent;
+}
+.search{
+	margin:0;
+background-color: transparent;
+  float:left;
+}
