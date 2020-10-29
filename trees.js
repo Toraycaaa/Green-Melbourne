@@ -183,6 +183,7 @@ map.on('load', function() {
         closeButton: false,
         closeOnClick: false
     });
+    
     var Layers = ['New', 'Juvenile','Semi-mature','Mature','Over-mature'];
     for (var i = 0; i < Layers.length; i++) {
         map.on('mouseenter', Layers[i], function (e) {

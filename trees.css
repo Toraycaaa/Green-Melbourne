@@ -57,8 +57,24 @@ margin-right: 5px;
 	margin-top: 39px;
   }
 
- nav {
-  position: sticky !important; 
-  position: -webkit-sticky !important;    
-  top: 0px !important; 
+
+#nav {
+	border-bottom: 10px !important;
+	border-color: #76AD3A !important;
+	border: #76AD3A !important;
 }
+
+#logo {
+	width: 60px;
+	height: 60px;
+}
+
+#title {
+	font-family:sans-serif;
+	font-size: larger;
+}
+.active_map {
+	background-color: green !important;
+}
+
+

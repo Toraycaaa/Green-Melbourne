@@ -16,30 +16,30 @@
 
 </head>
 <body style='background-color: #222222;'>
-    <!--nav-->
-        
-<nav class="ui inverted attached segment">
-        <!--container-->
-        <div class="ui container">
-            <div class="ui grid ">
-                <div class="thirteen wide column">
-                    <h2 class="ui inverted header">Urban Forest Visual</h2>
-                </div>
-                <!--menu-->
-                <div class="three wide column">
-                    <div class="ui inverted secondary menu">
-                        <a class="item olive" href="#map_location">
-                            Map
-                        </a>
-                        <a class="item olive" href="#map_location">
-                            Statistic
-                        </a>
-                        
-                    </div>
-                </div>
-            </div>
-        </div>
-    </nav>
+
+ <!--nav-->
+ <div class="ui fixed inverted menu" id="nav">
+     <div class="ui container">
+         <a href="#top" class="header item" id="title">
+             <img src="./img/logo.svg">&nbsp;
+             Urban Forest Visual
+         </a>
+
+        <a class="ui right item " href="#map_location">
+            Map
+        </a>
+        <a class="item olive" href="#statistic_location">
+            Statistic
+        </a>
+
+
+
+     </div>
+ </div>
+
+
+
+
 
 
 
@@ -47,9 +47,14 @@
 
     
     <!--body-->
+    
     <div class="ui container" >
         <!--Home-->
         <div class="ui container" style='background-image: url(http://melbourneurbanforestvisual.com.au/images/UF_landing.png);'>
+            <div id="top"></div>
+            <br />
+            <br />
+            <br />
             <br />
             <br />
             <div class="ui container">
@@ -82,9 +87,7 @@
                 <br />
                 <br />
                 <br />
-                <br />
-                <br />
-                <br />
+                
             </div>
         </div>
 
@@ -93,8 +96,11 @@
 
         
         <!--map-->
-        
-        <h2 class="ui olive header" id="map_location">MAP</h2>
+        <div id="map_location">
+            <br />
+            <br />
+        </div>
+        <h2 class="ui olive header" >MAP</h2>
         <hr style="border:1 dashed #987cb9" width="100%" color=#76AD3A SIZE=1>
         <h3 style="color:#989898">Individual tree data for City of Melbourne trees is presented below. Pan and Zoom into different areas of Melbourne, click on tree symbols to reveal details, and select between different locations and filters.</h3>
         <br />
@@ -105,41 +111,38 @@
                     Hover here to choose layers
                 </a>
 
-                <a class="item" id="popup">
-                    Drag map, click icons for details
-                </a>
-
                 <div class="ui inverted fluid popup bottom left transition hidden">
                 <div class="ui four column relaxed divided grid">
                     <div class="column">
-                    <h4 class="ui header">Age Description</h4>
-                    <div class="ui link list" id=age>
-                        
-                        <!-- <a class="item">Viscose</a> -->
+                        <h4 class="ui header">Age Description</h4>
+                        <div class="ui link list" id=age>                     
+                            <!-- <a class="item">Viscose</a> -->
+                        </div>
                     </div>
-                    </div>
+
                     <div class="column">
-                    <h4 class="ui header">Location</h4>
-                    <div class="ui link list" id=location>
-                        
+                        <h4 class="ui header">Location</h4>
+                        <div class="ui link list" id=location>
+                        </div>
                     </div>
-                    </div>
+
                     <div class="column">
-                    <h4 class="ui header">Year Planted</h4>
-                    <div class="ui link list" id=year>
-                        
+                        <h4 class="ui header">Year Planted</h4>
+                        <div class="ui link list" id=year>
+                        </div>
                     </div>
-                    </div>
+
                     <div class="column">
-                    <h4 class="ui header">Soil Types</h4>
-                    <div class="ui link list" id=soil_type>
-                    </div>
+                        <h4 class="ui header">Soil Types</h4>
+                        <div class="ui link list" id=soil_type>
+                        </div>
                     </div>
                 </div>
                 </div>
             </div>
 
-            <!--map-->     
+            <!--map-->    
+
             <div id='map' style='height: 500px;'>
             </div>
 
@@ -156,7 +159,7 @@
               <div class="column" style="color:white" >
                 <h2 style = "text-align: center">Age</h2>
                 
-                <div class="ui middle aligned animated list" style="padding-left: 100px;">
+                <div class="ui middle aligned animated list">
                     <div class="item">
                       <img class="ui avatar image" src="./img/tree_new.svg">
                       <div class="content">
@@ -280,14 +283,16 @@
 
         <br />
         <br />
-        <br />
-        <br />
-        <br />
+        
 
 
 
         <!--statistic -->
-        <h2 class="ui olive header" id="statistic_location">Statistic</h2>
+        <div id="statistic_location">
+            <br />
+            <br />
+        </div>
+        <h2 class="ui olive header" >Statistic</h2>
         <hr style="border:1 dashed #987cb9" width="100%" color=#76AD3A SIZE=1>
         <h3 style="color:#989898">Details</h3>
         <br />
@@ -327,15 +332,18 @@
             on : 'hover'
         });
 
+        //popup
         $('#popup')
         .popup({
-                inline     : true,
-                hoverable  : true,
-                delay: {
-                show: 800,
-                hide: 800
-                }
-            })
+          
+          inline     : true,
+          hoverable  : true,
+          position   : 'bottom right',
+          delay: {
+            show: 300,
+            hide: 800
+          }
+        })
       ;
 
         
