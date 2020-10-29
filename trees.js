@@ -180,19 +180,20 @@ map.on('load', function() {
 
     // Create a popup, but don't add it to the map yet.
     var popup = new mapboxgl.Popup({
+        className: "mypopup",
         closeButton: false,
-        closeOnClick: false
+        closeOnClick: true
     });
 
-    var Layers = ['New', 'Juvenile','Semi-mature','Mature','Over-mature'];
+    var Layers = ['New', 'Juvenile','Semi-mature','Mature','Over-mature', 'Location-Street','Location-Park', 'Before 2020', '2000-2010', '2010-2020'];
     for (var i = 0; i < Layers.length; i++) {
         map.on('mouseenter', Layers[i], function (e) {
         // Change the cursor style as a UI indicator.
         map.getCanvas().style.cursor = 'pointer';
 
         var coordinates = e.features[0].geometry.coordinates.slice();
-        var description = 'Genus: ' + e.features[0].properties.Genus + 
-                        '<br>Family: ' + e.features[0].properties.Family+ 
+
+        var description =  '<br>Family: ' + e.features[0].properties.Family+ 
                         '<br>Date Planted: ' + e.features[0].properties.DatePlanted + 
                         '<br>Useful Life Expectency: ' + e.features[0].properties.UsefulLifeExpectency + '<br>';
 
@@ -202,13 +203,13 @@ map.on('load', function() {
         while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
             coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
         }
-
         // Populate the popup and set its coordinates
         // based on the feature found.
-        popup.setLngLat(coordinates).setHTML(description).addTo(map);
+        popup.setLngLat(coordinates).setHTML('<h3><a href="http://en.wikipedia.org/wiki/'+ e.features[0].properties.CommonName+ '">' 
+                                                + e.features[0].properties.CommonName + '</a>' + description + '</h3>').addTo(map);
         });
 
-        map.on('mouseleave', Layers[i], function () {
+        map.on('mouseleave', popup, function () {
             map.getCanvas().style.cursor = '';
             popup.remove();
         });
@@ -218,7 +219,7 @@ map.on('load', function() {
 
 
 // enumerate ids of the layers
-var age_description = ['New','Juvenile','Semi-mature','Mature','Over-mature',];
+var age_description = ['New','Juvenile','Semi-mature','Mature','Over-mature'];
 // set up the corresponding toggle button for each layer
 for (var i = 0; i < age_description.length; i++) {
     var id = age_description[i];
