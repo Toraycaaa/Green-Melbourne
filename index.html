@@ -11,12 +11,6 @@
     <link href="./trees.css" rel='stylesheet'>
     <link rel="shortcut icon" href="./tree-png.ico">
     
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/zfilm.css" rel="stylesheet">
-    <script src="js/jquery.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    
     <script src='https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.js'></script>
     <link href='https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css' rel='stylesheet' />
 
@@ -120,72 +114,28 @@
                 <div class="ui inverted fluid popup bottom left transition hidden">
                 <div class="ui four column relaxed divided grid">
                     <div class="column">
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                Age Description
-                                <!--<b class="caret"></b> -->
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li><a href="#">New</a></li>
-                                <li class="divider"></li>
-                                <li><a href="#">Juvenile</a></li>
-                                <li class="divider"></li>
-                                <li><a href="#">Semi-mature</a></li>
-                                <li class="divider"></li>
-                                <li><a href="#">Mature</a></li>
-                                <li class="divider"></li>
-                                <li><a href="#">Over-mature</a></li>
-                            </ul>
-                        </li>
+                        <h4 class="ui header">Age Description</h4>
+                        <div class="ui link list" id=age>                     
+                            <!-- <a class="item">Viscose</a> -->
+                        </div>
                     </div>
+
                     <div class="column">
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                Location
-                                <!--<b class="caret"></b> -->
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li><a href="#">Location-Street</a></li>
-                                <li class="divider"></li>
-                                <li><a href="#">Location-Park</a></li>
-                            </ul>
-                        </li>
+                        <h4 class="ui header">Location</h4>
+                        <div class="ui link list" id=location>
+                        </div>
                     </div>
+
                     <div class="column">
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                Year Planted
-                                <!--<b class="caret"></b> -->
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li><a href="#">Before 2000</a></li>
-                                <li class="divider"></li>
-                                <li><a href="#">2000 - 2010</a></li>
-                                <li class="divider"></li>
-                                <li><a href="#">2010 - 2020</a></li>
-                            </ul>
-                        </li>
+                        <h4 class="ui header">Year Planted</h4>
+                        <div class="ui link list" id=year>
+                        </div>
                     </div>
+
                     <div class="column">
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                Soil Types
-                                <!--<b class="caret"></b> -->
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li><a href="#">Duplex-Clay Silt then Clay</a></li>
-                                <li class="divider"></li>
-                                <li><a href="#">Textured Clay with Sand</a></li>
-                                <li class="divider"></li>
-                                <li><a href="#">Stratified Sand/Silt/Clay/Gravel</a></li>
-                                <li class="divider"></li>
-                                <li><a href="#">Silt</a></li>
-                                <li class="divider"></li>
-                                <li><a href="#">Shallow Heavy Textured Clay</a></li>    
-                                <li class="divider"></li>
-                                <li><a href="#">Sandy Loam</a></li> 
-                            </ul>
-                        </li>
+                        <h4 class="ui header">Soil Types</h4>
+                        <div class="ui link list" id=soil_type>
+                        </div>
                     </div>
                 </div>
                 </div>
@@ -195,6 +145,140 @@
 
             <div id='map' style='height: 500px;'>
             </div>
+
+            
+
+        
+            
+            
+
+            <h2 class="ui olive header">Map colours and symbols</h2>
+            <!--tabs-->
+
+            <div class="row">
+              <div class="column" style="color:white" >
+                <h2 style = "text-align: center">Age</h2>
+                
+                <div class="ui middle aligned animated list" style="padding-left: 80px;">
+                    <div class="item">
+                      <img class="ui avatar image" src="./img/tree_new.svg">
+                      <div class="content">
+                        <div class="header m-color-white">New</div>
+                      </div>
+                    </div>
+                    <div class="item">
+                      <img class="ui avatar image" src="./img/tree_juvenile.svg">
+                      <div class="content">
+                        <div class="header m-color-white">Juvenile</div>
+                      </div>
+                    </div>
+                    <div class="item">
+                      <img class="ui avatar image" src="./img/tree_semimature.svg">
+                      <div class="content">
+                        <div class="header m-color-white">Semi-mature</div>
+                      </div>
+                    </div>
+                    <div class="item">
+                        <img class="ui avatar image" src="./img/tree_mature.svg">
+                        <div class="content">
+                          <div class="header m-color-white">Mature</div>
+                        </div>
+                    </div>
+                    <div class="item">
+                    <img class="ui avatar image" src="./img/tree_over_mature.svg">
+                        <div class="content">
+                            <div class="header m-color-white">Over-mature</div>
+                        </div>
+                    </div>
+                </div>
+              
+              </div>
+              <div class="column" style="color:white">
+                <h2 style = "text-align: center">Location</h2>
+                
+                <div class="ui middle aligned animated list" style="padding-left: 95px;">
+                    <div class="item">
+                      <img class="ui avatar image" src="./img/s.svg">
+                      <div class="content">
+                        <div class="header m-color-white">Street</div>
+                      </div>
+                    </div>
+                    <div class="item">
+                    <img class="ui avatar image" src="./img/p.svg">
+                        <div class="content">
+                            <div class="header m-color-white">Park</div>
+                        </div>
+                    </div>
+                </div>
+              </div>
+              <div class="column" style="color:white">
+                <h2 style = "text-align: center">Year Planted</h2>
+                
+                <div class="ui middle aligned animated list" style= "text-align: center">
+                    <div class="item">
+                      <img class="ui avatar image" src="./img/year3.svg">
+                      <div class="content">
+                        <div class="header m-color-white">Before 2000</div>
+                      </div>
+                    </div>
+                    <div class="item">
+                        <img class="ui avatar image" src="./img/year2.svg">
+                        <div class="content">
+                          <div class="header m-color-white">2000 - 2010</div>
+                        </div>
+                    </div>
+                    <div class="item">
+                    <img class="ui avatar image" src="./img/year1.svg">
+                        <div class="content">
+                            <div class="header m-color-white">2010 - 2020</div>
+                        </div>
+                    </div>
+                </div>
+              </div>
+              <div class="column" style="color:white">
+                <h2 style = "text-align: center">Soil Type</h2>
+                
+                <div class="ui middle aligned animated list" style="padding-left: 30px;">
+                    <div class="item">
+                      <img class="ui avatar image" src="./img/Duplex-Clay.svg">
+                      <div class="content">
+                        <div class="header m-color-white">Duplex-Clay Silt then Clay</div>
+                      </div>
+                    </div>
+                    <div class="item">
+                      <img class="ui avatar image" src="./img/textured.svg">
+                      <div class="content">
+                        <div class="header m-color-white">Textured Clay with Sand</div>
+                      </div>
+                    </div>
+                    <div class="item">
+                      <img class="ui avatar image" src="./img/stratotified.svg">
+                      <div class="content">
+                        <div class="header m-color-white">Stratified Sand/Silt/Clay/Gravel</div>
+                      </div>
+                    </div>
+                    <div class="item">
+                        <img class="ui avatar image" src="./img/silt.svg">
+                        <div class="content">
+                          <div class="header m-color-white">Silt</div>
+                        </div>
+                    </div>
+                    <div class="item">
+                    <img class="ui avatar image" src="./img/shallow.svg">
+                        <div class="content">
+                            <div class="header m-color-white">Shallow Heavy Textured Clay</div>
+                        </div>
+                    </div>
+                    <div class="item">
+                    <img class="ui avatar image" src="./img/sandy.svg">
+                        <div class="content">
+                            <div class="header m-color-white">Sandy Loam</div>
+                        </div>
+                    </div>
+                </div>
+              </div>
+            </div>
+
 
 
         <br />
