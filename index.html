@@ -14,6 +14,7 @@
     <script src='https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.js'></script>
     <link href='https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css' rel='stylesheet' />
 
+
 </head>
 <body style='background-color: #222222;'>
 
@@ -102,15 +103,21 @@
         </div>
         <h2 class="ui olive header" >MAP</h2>
         <hr style="border:1 dashed #987cb9" width="100%" color=#76AD3A SIZE=1>
-        <h3 style="color:#989898">Individual tree data for City of Melbourne trees is presented below. Pan and Zoom into different areas of Melbourne, click on tree symbols to reveal details, and select between different locations and filters.</h3>
+        <p style="font-size:17px; color:#989898">Explore the tree data - Individual tree data for City of Melbourne trees is presented below. <b>Pan</b> and <b>Zoom</b> into different areas of Melbourne city, <b>Hover</b> on the Filter Menu to select between different filters, and <b>Hover</b> on tree symbols to reveal details of the tree.</h3>
         <br />
         <div class="ui container">   
             <div class="ui inverted secondary pointing menu">
-                <a class="active item" id="popup">
+                <!-- <a class="active item" id="popup">
                     <i class="wrench icon"></i>&nbsp;
                     Hover here to choose layers
-                </a>
-
+                </a> -->
+                <button class="active item" id="popup">
+                  <!-- <i class="wrench icon"></i>&nbsp;  -->
+                  <a href="#menu" style="font-size: 16px;">
+                    &#9776;
+                  Filter Menu</a>
+                </button>
+                
                 <div class="ui inverted fluid popup bottom left transition hidden">
                 <div class="ui four column relaxed divided grid">
                     <div class="column">
@@ -224,13 +231,13 @@
                     <div class="item">
                         <img class="ui avatar image" src="./img/year2.svg">
                         <div class="content">
-                          <div class="header m-color-white">2000-2010</div>
+                          <div class="header m-color-white">2000 - 2010</div>
                         </div>
                     </div>
                     <div class="item">
                     <img class="ui avatar image" src="./img/year1.svg">
                         <div class="content">
-                            <div class="header m-color-white">2010-2020</div>
+                            <div class="header m-color-white">2010 - 2020</div>
                         </div>
                     </div>
                 </div>
@@ -284,7 +291,7 @@
         <br />
         <br />
         
-
+    
 
 
         <!--statistic -->
@@ -300,10 +307,80 @@
         <div class="ui container">
             <div class='tableauPlaceholder' id='viz1603907031602' style='position: relative'><noscript><a href='#'><img alt=' ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;As&#47;Assignment3_16034604091830&#47;Dashboard1&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='Assignment3_16034604091830&#47;Dashboard1' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;As&#47;Assignment3_16034604091830&#47;Dashboard1&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en-GB' /><param name='filter' value='publish=yes' /></object></div>   
         </div>
+<<<<<<< HEAD
+
+        <br />
+        <br />
+        <br />
+        <br />
+        <div id="statistic_location">
+            <br />
+            <br />
+        </div>
+        <h2 class="ui olive header" >Planting Schedule</h2>
+        <hr style="border:1 dashed #987cb9" width="100%" color=#76AD3A SIZE=1>
+        <br />
+        <iframe width="100%" height="520" frameborder="0" src="https://evavavava.carto.com/builder/2fe50078-0a09-4630-ad1e-18443823c9ff/embed" allowfullscreen webkitallowfullscreen mozallowfullscreen oallowfullscreen msallowfullscreen></iframe>
+    </div>
+=======
+>>>>>>> 1ec764c72e987ef0a5baacbf2ae56c175ded9e91
+
+
+
+
+         <!--schedule -->
+        <div id="schedule_location">
+          <br />
+          <br />
+          <br />
+        </div>
+        <h2 class="ui olive header" >Schedule</h2>
+        <hr style="border:1 dashed #987cb9" width="100%" color=#76AD3A SIZE=1>
+        <h3 style="color:#989898">schedule.</h3>
+        <br />
+        <br />
+
+        <div id = "schedule">
+        <iframe width="100%" height="520" frameborder="0" src="https://lisalisalisa.carto.com/builder/8bdad79b-4d69-4e52-9769-2c4725f562d5/embed" allowfullscreen webkitallowfullscreen mozallowfullscreen oallowfullscreen msallowfullscreen></iframe>
+        </div>
+
     </div>
 
+		<!--schedule -->
+        <div id="schedule_location">
+          <br />
+          <br />
+          <br />
+        </div>
+        <h2 class="ui olive header" >Schedule</h2>
+        <hr style="border:1 dashed #987cb9" width="100%" color=#76AD3A SIZE=1>
+        <h3 style="color:#989898">schedule.</h3>
+        <br />
+        <br />
 
+        <div id = "schedule">
+        <iframe width="100%" height="520" frameborder="0" src="https://sdavuluri.carto.com/builder/efffc4f8-e6a1-4c45-87b1-90fa008b8305/embed" allowfullscreen webkitallowfullscreen mozallowfullscreen oallowfullscreen msallowfullscreen></iframe>
+        </div>
 
+    </div>
+	
+		<!--schedule -->
+        <div id="schedule_location">
+          <br />
+          <br />
+          <br />
+        </div>
+        <h2 class="ui olive header" >Schedule</h2>
+        <hr style="border:1 dashed #987cb9" width="100%" color=#76AD3A SIZE=1>
+        <h3 style="color:#989898">schedule.</h3>
+        <br />
+        <br />
+
+        <div id = "schedule">
+        <iframe width="100%" height="520" frameborder="0" src="https://sdavuluri.carto.com/builder/69e20b53-dea0-49d6-ac92-29ffac6f65ac/embed" allowfullscreen webkitallowfullscreen mozallowfullscreen oallowfullscreen msallowfullscreen></iframe>
+        </div>
+
+    </div>
 
 
 
@@ -349,177 +426,6 @@
         
     </script>
     
-<script type="text/javascript">
-window.onload = function () {
-// enumerate ids of the layers
-var age_description = ['New','Juvenile','Semi-mature','Mature','Over-mature',];
-// set up the corresponding toggle button for each layer
-for (var i = 0; i < age_description.length; i++) {
-    var id = age_description[i];
-    var link = document.createElement('a');
-    // link.classList.add("active");
-    link.classList.add("item","active_map");
-    link.textContent = id;
-    link.dataValue = id
-    map.setLayoutProperty(id, 'visibility', 'visible');
-    link.onclick = function (e) {
-        var clickedLayer = this.textContent;
-        e.preventDefault();
-        e.stopPropagation();
-
-        var visibility = map.getLayoutProperty(clickedLayer, 'visibility');
-        console.log('可见吗？' + visibility)
-
-        // toggle layer visibility by changing the layout object's visibility property
-        if (visibility === 'visible') {
-                map.setLayoutProperty(clickedLayer, 'visibility', 'none');
-                this.setAttribute("class","item");
-                console.log('bukejian')
-            } else {
-                this.setAttribute("class","active_map");
-                this.classList.add("item")
-                map.setLayoutProperty(clickedLayer, 'visibility', 'visible');
-                console.log('kejian')
-            }
-    };
-
-    var layers = document.getElementById('age');
-    layers.appendChild(link);
-    
-    if(i != 0){
-        map.setLayoutProperty(id, 'visibility', 'none');
-        link.setAttribute("class","item");
-        console.log('bukejian')
-    }
-}
-
-
-// enumerate ids of the layers
-var locate = ['Location-Street','Location-Park'];
-// set up the corresponding toggle button for each layer
-for (var i = 0; i < locate.length; i++) {
-    var id = locate[i];
-
-    var link = document.createElement('b');
-    // link.classList.add("active");
-    link.classList.add("item","active_map");
-    link.textContent = id;
-    link.dataValue = id
-    map.setLayoutProperty(id, 'visibility', 'visible');
-    link.onclick = function (e) {
-        var clickedLayer = this.textContent;
-        e.preventDefault();
-        e.stopPropagation();
-
-        var visibility = map.getLayoutProperty(clickedLayer, 'visibility');
-        console.log('可见吗？' + visibility)
-
-        // toggle layer visibility by changing the layout object's visibility property
-        if (visibility === 'visible') {
-                map.setLayoutProperty(clickedLayer, 'visibility', 'none');
-                this.setAttribute("class","item");
-                console.log('bukejian')
-            } else {
-                this.setAttribute("class","active_map");
-                this.classList.add("item")
-                map.setLayoutProperty(clickedLayer, 'visibility', 'visible');
-                console.log('kejian')
-            }
-    };
-
-    var layers = document.getElementById('location');
-    layers.appendChild(link);
-    if(i != 0){
-        map.setLayoutProperty(id, 'visibility', 'none');
-        link.setAttribute("class","item");
-        console.log('bukejian')
-    }
-}
-
-// enumerate ids of the layers
-var soil = ['Duplex-Clay Silt then Clay', 'Medium to Heavy Textured Clay with Sand', 'Deep Stratified Sand Silt Clay Gravel',
-            'Silt', 'Shallow Heavy Textured Clay','Sandy Loam'];
-// set up the corresponding toggle button for each layer
-for (var i = 0; i < soil.length; i++) {
-    var id = soil[i];
-
-    var link = document.createElement('c');
-    // link.classList.add("active");
-    link.classList.add("item","active_map");
-    link.textContent = id;
-    link.dataValue = id
-    map.setLayoutProperty(id, 'visibility', 'visible');
-    link.onclick = function (e) {
-        var clickedLayer = this.textContent;
-        e.preventDefault();
-        e.stopPropagation();
-
-        var visibility = map.getLayoutProperty(clickedLayer, 'visibility');
-        console.log('可见吗？' + visibility)
-
-        // toggle layer visibility by changing the layout object's visibility property
-        if (visibility === 'visible') {
-                map.setLayoutProperty(clickedLayer, 'visibility', 'none');
-                this.setAttribute("class","item");
-                console.log('bukejian')
-            } else {
-                this.setAttribute("class","active_map");
-                this.classList.add("item")
-                map.setLayoutProperty(clickedLayer, 'visibility', 'visible');
-                console.log('kejian')
-            }
-    };
-    if(i != 0){
-        map.setLayoutProperty(id, 'visibility', 'none');
-        link.setAttribute("class","item");
-        console.log('bukejian')
-    }
-    var layers = document.getElementById('soil_type');
-    layers.appendChild(link);
-}
-
-// enumerate ids of the layers
-var year = ['Before 2000', '2000-2010', '2010-2020'];
-// set up the corresponding toggle button for each layer
-for (var i = 0; i < year.length; i++) {
-    var id = year[i];
-
-    var link = document.createElement('c');
-    // link.classList.add("active");
-    link.classList.add("item","active_map");
-    link.textContent = id;
-    link.dataValue = id
-    map.setLayoutProperty(id, 'visibility', 'visible');
-    link.onclick = function (e) {
-        var clickedLayer = this.textContent;
-        e.preventDefault();
-        e.stopPropagation();
-
-        var visibility = map.getLayoutProperty(clickedLayer, 'visibility');
-        console.log('可见吗？' + visibility)
-
-        // toggle layer visibility by changing the layout object's visibility property
-        if (visibility === 'visible') {
-                map.setLayoutProperty(clickedLayer, 'visibility', 'none');
-                this.setAttribute("class","item");
-                console.log('bukejian')
-            } else {
-                this.setAttribute("class","active_map");
-                this.classList.add("item")
-                map.setLayoutProperty(clickedLayer, 'visibility', 'visible');
-                console.log('kejian')
-            }
-    };
-    if(i != 0){
-        map.setLayoutProperty(id, 'visibility', 'none');
-        link.setAttribute("class","item");
-        console.log('bukejian')
-    }
-    var layers = document.getElementById('year');
-    layers.appendChild(link);
-}
-}
-</script>    
    
 </body>
 </html>
