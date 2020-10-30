@@ -73,13 +73,7 @@ margin-right: 5px;
 	font-family:sans-serif;
 	font-size: larger;
 }
-/*.active_map {
-	background-color: green !important;
-}*/
-
-.mypopup .mapboxgl-popup-content {
-  background-color: #c7deb4;
+.active_map {
+    background-color: #1111DD !important;
 }
-
-
 
