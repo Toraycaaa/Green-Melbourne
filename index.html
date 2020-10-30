@@ -348,53 +348,7 @@
 
         
     </script>
-    <script type="text/javascript">
-        window.onload = function () {
-        
-            var age_description = ['New','Juvenile','Semi-mature','Mature','Over-mature',];
-            // set up the corresponding toggle button for each layer
-            for (var i = 0; i < age_description.length; i++) { 
-                var id = age_description[i];
-
-                var link = document.createElement('a');
-                //link.classList.add("active");
-                link.classList.add("item","active_map");
-                link.textContent = id;
-                link.dataValue = id
-                map.setLayoutProperty(id, 'visibility', 'visible');
-                //if visibility
-                
-                link.onclick = function (e) {
-                    var clickedLayer = this.textContent;
-                    e.preventDefault();
-                    e.stopPropagation();
-
-                    var visibility = map.getLayoutProperty(clickedLayer, 'visibility');
-                    console.log('可见吗？1' + visibility)
-
-                    // toggle layer visibility by changing the layout object's visibility property
-                    if (visibility === 'visible') {
-                            map.setLayoutProperty(clickedLayer, 'visibility', 'none');
-                            this.setAttribute("class","item");
-                            console.log('bukejian')
-                        } else {
-                            this.setAttribute("class","active_map");
-                            this.classList.add("item")
-                            map.setLayoutProperty(clickedLayer, 'visibility', 'visible');
-                            console.log('kejian')
-                        }
-                };
-
-                var layers = document.getElementById('age');
-                layers.appendChild(link);
-                
-            }
-        
-
-        }
-        
-
-    </script>
+    
     
    
 </body>

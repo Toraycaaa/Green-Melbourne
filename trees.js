@@ -11,7 +11,7 @@ mapboxgl.accessToken = 'pk.eyJ1IjoiZXZhYWFhYXp6eiIsImEiOiJja2V4ZmtzdW8wMW5sMnBxd
 //zoom button
 map.addControl(new mapboxgl.NavigationControl());
 
-//hover function0
+//hover function
 map.on('load', function() {
             
     // add source and layer for museums
@@ -216,8 +216,43 @@ map.on('load', function() {
     }
 });
 
-// enumerate ids of the layers
 
+// enumerate ids of the layers
+var age_description = ['New','Juvenile','Semi-mature','Mature','Over-mature',];
+// set up the corresponding toggle button for each layer
+for (var i = 0; i < age_description.length; i++) {
+    var id = age_description[i];
+
+    var link = document.createElement('a');
+    // link.classList.add("active");
+    link.classList.add("item","active_map");
+    link.textContent = id;
+    link.dataValue = id
+
+    link.onclick = function (e) {
+        var clickedLayer = this.textContent;
+        e.preventDefault();
+        e.stopPropagation();
+
+        var visibility = map.getLayoutProperty(clickedLayer, 'visibility');
+        console.log('可见吗？' + visibility)
+
+        // toggle layer visibility by changing the layout object's visibility property
+        if (visibility === 'visible') {
+                map.setLayoutProperty(clickedLayer, 'visibility', 'none');
+                this.setAttribute("class","item");
+                console.log('bukejian')
+            } else {
+                this.setAttribute("class","active_map");
+                this.classList.add("item")
+                map.setLayoutProperty(clickedLayer, 'visibility', 'visible');
+                console.log('kejian')
+            }
+    };
+
+    var layers = document.getElementById('age');
+    layers.appendChild(link);
+}
 
 
 // enumerate ids of the layers
@@ -306,7 +341,7 @@ for (var i = 0; i < year.length; i++) {
     link.classList.add("item","active_map");
     link.textContent = id;
     link.dataValue = id
-    link.s
+
     link.onclick = function (e) {
         var clickedLayer = this.textContent;
         e.preventDefault();
@@ -331,3 +366,4 @@ for (var i = 0; i < year.length; i++) {
     var layers = document.getElementById('year');
     layers.appendChild(link);
 }
+
