@@ -6,182 +6,21 @@ mapboxgl.accessToken = 'pk.eyJ1IjoiZXZhYWFhYXp6eiIsImEiOiJja2V4ZmtzdW8wMW5sMnBxd
         var map = new mapboxgl.Map({
             container: 'map',
             style: 'mapbox://styles/evaaaaazzz/ckgs65jsw0wm019lyhptqj1t0', // stylesheet location
-            
+            center: [144.949888, -37.810745],
+            zoom: 11,
+            attributionControl: false
         });
 //zoom button
 map.addControl(new mapboxgl.NavigationControl());
 
 //hover function
 map.on('load', function() {
-            
-    // add source and layer for museums
-    // map.addSource('Trees', {
-    //         type: 'vector',
-    //         url: 'mapbox://evaaaaazzz.ad4ib1uc'
-    // });
-    // map.addLayer({
-    //     'id': 'New',
-    //     'type': 'Symbol',
-    //     'source': 'Trees',
-    //     'layout': {
-    //         // make layer visible by default
-    //         'visibility': 'visible'
-    //     },
-
-    // });
-
-    // map.addLayer({
-    //     'id': 'Juvenile',
-    //     'type': 'Symbol',
-    //     'source': 'Trees',
-    //     'layout': {
-    //             // make layer visible by default
-    //             'visibility': 'visible'
-    //     },
-
-    // });
-
-    // map.addLayer({
-    //     'id': 'Semi-mature',
-    //     'type': 'Symbol',
-    //     'source': 'Trees',
-    //     'layout': {
-    //             // make layer visible by default
-    //             'visibility': 'visible'
-    //     },
-
-    // });
-
-    // map.addLayer({
-    //     'id': 'Mature',
-    //     'type': 'Symbol',
-    //     'source': 'Trees',
-    //     'layout': {
-    //             // make layer visible by default
-    //             'visibility': 'visible'
-    //     },
-       
-    // });
-    // map.addLayer({
-    //     'id': 'Over-mature',
-    //     'type': 'Symbol',
-    //     'source': 'Trees',
-    //     'layout': {
-    //             // make layer visible by default
-    //             'visibility': 'visible'
-    //     },
-
-    // });
-    // map.addLayer({
-    //     'id': 'Location-Park',
-    //     'type': 'Symbol',
-    //     'source': 'Trees',
-    //     'layout': {
-    //             // make layer visible by default
-    //             'visibility': 'visible'
-    //     },
-
-    // });
-    // map.addLayer({
-    //     'id': 'Location-Street',
-    //     'type': 'Symbol',
-    //     'source': 'Trees',
-    //     'layout': {
-    //         // make layer visible by default
-    //         'visibility': 'visible'
-    //     },
-    // });
-    //     map.addLayer({
-    //     'id': '2010-2020',
-    //     'type': 'Symbol',
-    //     'source': 'Trees',
-    //     'layout': {
-    //         // make layer visible by default
-    //         'visibility': 'none'
-    //     },
-    // });
-
-    // map.addLayer({
-    //     'id': '2000-2010',
-    //     'type': 'Symbol',
-    //     'source': 'Trees',
-    //     'layout': {
-    //         // make layer visible by default
-    //         'visibility': 'none'
-    //     },
-    // });
-
-    // map.addLayer({
-    //     'id': 'Before 2000',
-    //     'type': 'Symbol',
-    //     'source': 'Trees',
-    //     'layout': {
-    //         // make layer visible by default
-    //         'visibility': 'none'
-    //     },
-    // });
-    // map.addLayer({
-    //     'id': 'Duplex-Clay Silt then Clay',
-    //     'type': 'Symbol',
-    //     'source': 'Soil',
-    //     'layout': {
-    //         // make layer visible by default
-    //         'visibility': 'none'
-    //     },
-    // });
-    // map.addLayer({
-    //     'id': 'Medium to Heavy Textured Clay with Sand',
-    //     'type': 'Symbol',
-    //     'source': 'Soil',
-    //     'layout': {
-    //         // make layer visible by default
-    //         'visibility': 'none'
-    //     },
-    // });
-    // map.addLayer({
-    //     'id': 'Deep Stratified Sand Silt Clay Gravel',
-    //     'type': 'Symbol',
-    //     'source': 'Soil',
-    //     'layout': {
-    //         // make layer visible by default
-    //         'visibility': 'none'
-    //     },
-    // });
-    // map.addLayer({
-    //     'id': 'Silt',
-    //     'type': 'Symbol',
-    //     'source': 'Soil',
-    //     'layout': {
-    //         // make layer visible by default
-    //         'visibility': 'none'
-    //     },
-    // });
-    // map.addLayer({
-    //     'id': 'Shallow Heavy Textured Clay',
-    //     'type': 'Symbol',
-    //     'source': 'Soil',
-    //     'layout': {
-    //         // make layer visible by default
-    //         'visibility': 'none'
-    //     },
-    // });
-    // map.addLayer({
-    //     'id': 'Sandy Loam',
-    //     'type': 'Symbol',
-    //     'source': 'Soil',
-    //     'layout': {
-    //         // make layer visible by default
-    //         'visibility': 'none'
-    //     },
-    // });
-
-
-
 
     // Create a popup, but don't add it to the map yet.
     var popup = new mapboxgl.Popup({
-        closeButton: false,
-        closeOnClick: false
+        className: "mypopup",
+        closeButton: true,
+        closeOnClick: true
     });
 
     var Layers = ['New', 'Juvenile','Semi-mature','Mature','Over-mature'];
@@ -191,10 +30,11 @@ map.on('load', function() {
         map.getCanvas().style.cursor = 'pointer';
 
         var coordinates = e.features[0].geometry.coordinates.slice();
-        var description = 'Genus: ' + e.features[0].properties.Genus + 
-                        '<br>Family: ' + e.features[0].properties.Family+ 
-                        '<br>Date Planted: ' + e.features[0].properties.DatePlanted + 
-                        '<br>Useful Life Expectency: ' + e.features[0].properties.UsefulLifeExpectency + '<br>';
+
+        var description = '<br>' + 'Name: ' + e.features[0].properties.CommonName+ 
+                            '<br>Familyaaa: ' + e.features[0].properties.Family+ 
+                            '<br>Date Planted: ' + e.features[0].properties.DatePlanted + 
+                            '<br>Useful Life Expectency: ' + e.features[0].properties.UsefulLifeExpectency + '<br>';
 
         // Ensure that if the map is zoomed out such that multiple
         // copies of the feature are visible, the popup appears
@@ -205,7 +45,8 @@ map.on('load', function() {
 
         // Populate the popup and set its coordinates
         // based on the feature found.
-        popup.setLngLat(coordinates).setHTML(description).addTo(map);
+        popup.setLngLat(coordinates).setHTML('<h3' + description + '<a href="http://en.wikipedia.org/wiki/'+ e.features[0].properties.CommonName+ '">' 
+                                                + "Click here for more" + '</a></h3>').addTo(map);
         });
 
         map.on('mouseleave', Layers[i], function () {
