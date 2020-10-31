@@ -430,9 +430,11 @@
     
     <script type="text/javascript">
         window.onload = function () {
-
+        var menu = ['age', 'location', 'year', 'soil_type'];
+        var current_visible_layer = 'age';
+        var current_visible_ids = new Set(['New','Juvenile','Semi-mature','Mature','Over-mature']);
         // enumerate ids of the layers
-        var age_description = ['New','Juvenile','Semi-mature','Mature','Over-mature',];
+        var age_description = ['New','Juvenile','Semi-mature','Mature','Over-mature'];
         // set up the corresponding toggle button for each layer
         for (var i = 0; i < age_description.length; i++) {
             var id = age_description[i];
@@ -441,6 +443,7 @@
             link.classList.add("item","active_map");
             link.textContent = id;
             link.dataValue = id
+            link.id = id
             map.setLayoutProperty(id, 'visibility', 'visible');
             link.onclick = function (e) {
                 var clickedLayer = this.textContent;
@@ -454,23 +457,36 @@
                 if (visibility === 'visible') {
                         map.setLayoutProperty(clickedLayer, 'visibility', 'none');
                         this.setAttribute("class","item");
-                        console.log('bukejian')
-                    } else {
-                        this.setAttribute("class","active_map");
-                        this.classList.add("item")
-                        //this.setAttribute("color","black");
-                        map.setLayoutProperty(clickedLayer, 'visibility', 'visible');
-                        console.log('kejian')
+                        console.log('bukejian');
+                        current_visible_ids.delete(clickedLayer);
+                } else {
+                    if (current_visible_layer != 'age'){
+                        console.log(current_visible_ids);
+                        for (var x of current_visible_ids){
+                            var temptag = document.getElementById(x)
+                            map.setLayoutProperty(x, 'visibility', 'none');
+                            temptag.setAttribute("class","item");
+                            console.log('closeothers');
+                        }
+                        current_visible_ids = new Set([]);
+                        current_visible_layer = 'age';
                     }
+                    current_visible_ids.add(clickedLayer)
+                    this.setAttribute("class","active_map");
+                    this.classList.add("item")
+                    //this.setAttribute("color","black");
+                    map.setLayoutProperty(clickedLayer, 'visibility', 'visible');
+                    console.log('kejian')
+                }
             };
 
             var layers = document.getElementById('age');
             layers.appendChild(link);
-            if(i != 0){
-                map.setLayoutProperty(id, 'visibility', 'none');
-                link.setAttribute("class","item");
-                console.log('bukejian')
-            }
+            //if(i != 0){
+            //    map.setLayoutProperty(id, 'visibility', 'none');
+            //    link.setAttribute("class","item");
+            //    console.log('bukejian')
+            //}
         }
 
         // enumerate ids of the layers
@@ -484,6 +500,7 @@
             link.classList.add("item","active_map");
             link.textContent = id;
             link.dataValue = id
+            link.id = id
             map.setLayoutProperty(id, 'visibility', 'visible');
             link.onclick = function (e) {
                 var clickedLayer = this.textContent;
@@ -497,22 +514,34 @@
                 if (visibility === 'visible') {
                         map.setLayoutProperty(clickedLayer, 'visibility', 'none');
                         this.setAttribute("class","item");
-                        console.log('bukejian')
-                    } else {
-                        this.setAttribute("class","active_map");
-                        this.classList.add("item")
-                        map.setLayoutProperty(clickedLayer, 'visibility', 'visible');
-                        console.log('kejian')
+                        console.log('bukejian');
+                        current_visible_ids.delete(clickedLayer);
+                } else {
+                    if (current_visible_layer != menu[1]){
+                        console.log(current_visible_ids);
+                        for (var x of current_visible_ids){
+                            var temptag = document.getElementById(x)
+                            map.setLayoutProperty(x, 'visibility', 'none');
+                            temptag.setAttribute("class","item");
+                            console.log('closeothers');
+                        }
+                        current_visible_ids = new Set([]);
+                        current_visible_layer = menu[1];
                     }
+                    current_visible_ids.add(clickedLayer)
+                    this.setAttribute("class","active_map");
+                    this.classList.add("item")
+                    //this.setAttribute("color","black");
+                    map.setLayoutProperty(clickedLayer, 'visibility', 'visible');
+                    console.log('kejian')
+                }
             };
 
             var layers = document.getElementById('location');
             layers.appendChild(link);
-            if(i != 0){
-                map.setLayoutProperty(id, 'visibility', 'none');
-                link.setAttribute("class","item");
-                console.log('bukejian')
-            }
+            map.setLayoutProperty(id, 'visibility', 'none');
+            link.setAttribute("class","item");
+            console.log('bukejian')
         }
 
         // enumerate ids of the layers
@@ -527,6 +556,7 @@
             link.classList.add("item","active_map");
             link.textContent = id;
             link.dataValue = id
+            link.id = id
             map.setLayoutProperty(id, 'visibility', 'visible');
             link.onclick = function (e) {
                 var clickedLayer = this.textContent;
@@ -540,19 +570,32 @@
                 if (visibility === 'visible') {
                         map.setLayoutProperty(clickedLayer, 'visibility', 'none');
                         this.setAttribute("class","item");
-                        console.log('bukejian')
-                    } else {
-                        this.setAttribute("class","active_map");
-                        this.classList.add("item")
-                        map.setLayoutProperty(clickedLayer, 'visibility', 'visible');
-                        console.log('kejian')
+                        console.log('bukejian');
+                        current_visible_ids.delete(clickedLayer);
+                } else {
+                    if (current_visible_layer != menu[3]){
+                         console.log(current_visible_ids);
+                        for (var x of current_visible_ids){
+                            var temptag = document.getElementById(x)
+                            map.setLayoutProperty(x, 'visibility', 'none');
+                            temptag.setAttribute("class","item");
+                            console.log('closeothers');
+                        }
+                        current_visible_ids = new Set([]);
+                        current_visible_layer = menu[3];
                     }
-            };
-            if(i != 0){
-                map.setLayoutProperty(id, 'visibility', 'none');
-                link.setAttribute("class","item");
-                console.log('bukejian')
-            }
+                    current_visible_ids.add(clickedLayer)
+                    this.setAttribute("class","active_map");
+                    this.classList.add("item")
+                    //this.setAttribute("color","black");
+                    map.setLayoutProperty(clickedLayer, 'visibility', 'visible');
+                    console.log('kejian')
+                }
+        };
+ 
+            map.setLayoutProperty(id, 'visibility', 'none');
+            link.setAttribute("class","item");
+            console.log('bukejian')
             var layers = document.getElementById('soil_type');
             layers.appendChild(link);
         }
@@ -568,6 +611,7 @@
             link.classList.add("item","active_map");
             link.textContent = id;
             link.dataValue = id
+            link.id = id
             map.setLayoutProperty(id, 'visibility', 'visible');
             link.onclick = function (e) {
                 var clickedLayer = this.textContent;
@@ -581,23 +625,38 @@
                 if (visibility === 'visible') {
                         map.setLayoutProperty(clickedLayer, 'visibility', 'none');
                         this.setAttribute("class","item");
-                        console.log('bukejian')
-                    } else {
-                        this.setAttribute("class","active_map");
-                        this.classList.add("item")
-                        map.setLayoutProperty(clickedLayer, 'visibility', 'visible');
-                        console.log('kejian')
+                        console.log('bukejian');
+                        current_visible_ids.delete(clickedLayer);
+                } else {
+                console.log('current_visible_layer');
+                    
+                    if (current_visible_layer != menu[2]){
+                        console.log(current_visible_ids);
+                        for (var x of current_visible_ids){
+                            var temptag = document.getElementById(x)
+                            map.setLayoutProperty(x, 'visibility', 'none');
+                            temptag.setAttribute("class","item");
+                            console.log('closeothers');
+                        }
+                        current_visible_ids = new Set([]);
+                        current_visible_layer = menu[2];
                     }
+                    current_visible_ids.add(clickedLayer)
+                    this.setAttribute("class","active_map");
+                    this.classList.add("item")
+                    //this.setAttribute("color","black");
+                    map.setLayoutProperty(clickedLayer, 'visibility', 'visible');
+                    console.log('kejian')
+                }
             };
-            if(i != 0){
-                map.setLayoutProperty(id, 'visibility', 'none');
-                link.setAttribute("class","item");
-                console.log('bukejian')
-            }
+
+            map.setLayoutProperty(id, 'visibility', 'none');
+            link.setAttribute("class","item");
+            console.log('bukejian')
             var layers = document.getElementById('year');
             layers.appendChild(link);
         }
-        var menu = ['age', 'location', 'soil_type', 'year'];
+
         for (var i = 0; i < menu.length; i++) {
             var layers = document.getElementById(menu[i]);
             var link = document.createElement('b');
