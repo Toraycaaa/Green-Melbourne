@@ -676,7 +676,7 @@
                         console.log('bukejian');
                         current_visible_ids.delete(clickedLayer);
                 } else {
-                    if (current_visible_layer != menu[3]){
+                    /*if (current_visible_layer != menu[3]){
                          console.log(current_visible_ids);
                         for (var x of current_visible_ids){
                             var temptag = document.getElementById(x)
@@ -686,7 +686,7 @@
                         }
                         current_visible_ids = new Set([]);
                         current_visible_layer = menu[3];
-                    }
+                    }*/
                     current_visible_ids.add(clickedLayer)
                     this.setAttribute("class","active_map");
                     this.classList.add("item")
