@@ -1,4 +1,4 @@
-var divElement = document.getElementById('viz1603907031602');                    var vizElement = divElement.getElementsByTagName('object')[0];                    if ( divElement.offsetWidth > 800 ) { vizElement.style.width='1100px';vizElement.style.height='1527px';} else if ( divElement.offsetWidth > 500 ) { vizElement.style.width='1100px';vizElement.style.height='1527px';} else { vizElement.style.width='100%';vizElement.style.height='727px';}                     var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement); 
+var divElement = document.getElementById('viz1604117988869');                    var vizElement = divElement.getElementsByTagName('object')[0];                    if ( divElement.offsetWidth > 800 ) { vizElement.style.width='1100px';vizElement.style.height='1527px';} else if ( divElement.offsetWidth > 500 ) { vizElement.style.width='1100px';vizElement.style.height='1527px';} else { vizElement.style.width='100%';vizElement.style.height='727px';}                     var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement)
 
 
 
@@ -49,10 +49,25 @@ map.on('load', function() {
                                                 + "Click here for more" + '</a></h3>').addTo(map);
         });
 
-        map.on('mouseleave', Layers[i], function () {
-            map.getCanvas().style.cursor = '';
-            popup.remove();
-        });
+
+
+        // // Center the map on the coordinates of any clicked symbol from the 'symbols' layer.
+        // map.on('click', Layers[i], function (e) {
+        // map.flyTo({
+        // center: e.features[0].geometry.coordinates
+        // });
+        // });
+         
+        // // Change the cursor to a pointer when the it enters a feature in the 'symbols' layer.
+        // map.on('mouseenter', Layers[i], function () {
+        //     map.getCanvas().style.cursor = 'pointer';
+        // });
+         
+        // // Change it back to a pointer when it leaves.
+        // map.on('mouseleave', Layers[i], function () {
+        //     map.getCanvas().style.cursor = '';
+        // });
+
     
     }
 });
