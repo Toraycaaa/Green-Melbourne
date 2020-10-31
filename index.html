@@ -148,7 +148,7 @@
                         <h4 class="ui header">Age Description</h4>
                         <div class="ui link list" id=age>                     
                             <!-- <a class="item">Viscose</a> -->
-                            <a></a>  
+                            <a ></a>  
                         </div>
                     </div>
 
@@ -670,6 +670,7 @@
             link.dataValue = id
             link.id = id
             map.setLayoutProperty(id, 'visibility', 'visible');
+            
             link.onclick = function (e) {
                 var clickedLayer = this.textContent;
                 e.preventDefault();
@@ -711,6 +712,8 @@
             var layers = document.getElementById('soil_type');
             layers.appendChild(link);
         }
+
+        
 
         // enumerate ids of the layers
         var year = ['Before 2000', '2000-2010', '2010-2020'];
