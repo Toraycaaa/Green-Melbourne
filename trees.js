@@ -23,7 +23,7 @@ map.on('load', function() {
         closeOnClick: true
     });
 
-    var Layers = ['New', 'Juvenile','Semi-mature','Mature','Over-mature', 'Location-Street','Location-Park', 'Before 2020', '2000-2010', '2010-2020'];
+    var Layers = ['New', 'Juvenile','Semi-mature','Mature','Over-mature'];
     for (var i = 0; i < Layers.length; i++) {
         map.on('mouseenter', Layers[i], function (e) {
         // Change the cursor style as a UI indicator.
@@ -42,12 +42,14 @@ map.on('load', function() {
         while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
             coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
         }
+
         // Populate the popup and set its coordinates
         // based on the feature found.
         popup.setLngLat(coordinates).setHTML('<h3' + description + '<a href="http://en.wikipedia.org/wiki/'+ e.features[0].properties.CommonName+ '">' 
                                                 + "Click here for more" + '</a></h3>').addTo(map);
         });
 
+<<<<<<< HEAD
 
         // // Center the map on the coordinates of any clicked symbol from the 'symbols' layer.
         // map.on('click', Layers[i], function (e) {
@@ -65,158 +67,16 @@ map.on('load', function() {
         // map.on('mouseleave', Layers[i], function () {
         //     map.getCanvas().style.cursor = '';
         // });
+=======
+        map.on('mouseleave', Layers[i], function () {
+            map.getCanvas().style.cursor = '';
+            popup.remove();
+        });
+>>>>>>> 148cc84f9b3542df8ecf54f34ee9df3288b7cebe
     
     }
 });
 
 
-// enumerate ids of the layers
-var age_description = ['New','Juvenile','Semi-mature','Mature','Over-mature'];
-// set up the corresponding toggle button for each layer
-for (var i = 0; i < age_description.length; i++) {
-    var id = age_description[i];
 
-    var link = document.createElement('a');
-    // link.classList.add("active");
-    link.classList.add("item","active_map");
-    link.textContent = id;
-    link.dataValue = id
-
-    link.onclick = function (e) {
-        var clickedLayer = this.textContent;
-        e.preventDefault();
-        e.stopPropagation();
-
-        var visibility = map.getLayoutProperty(clickedLayer, 'visibility');
-        console.log('可见吗？' + visibility)
-
-        // toggle layer visibility by changing the layout object's visibility property
-        if (visibility === 'visible') {
-                map.setLayoutProperty(clickedLayer, 'visibility', 'none');
-                this.setAttribute("class","item");
-                console.log('bukejian')
-            } else {
-                this.setAttribute("class","active_map");
-                this.classList.add("item")
-                map.setLayoutProperty(clickedLayer, 'visibility', 'visible');
-                console.log('kejian')
-            }
-    };
-
-    var layers = document.getElementById('age');
-    layers.appendChild(link);
-}
-
-
-// enumerate ids of the layers
-var locate = ['Location-Street','Location-Park'];
-// set up the corresponding toggle button for each layer
-for (var i = 0; i < locate.length; i++) {
-    var id = locate[i];
-
-    var link = document.createElement('b');
-    // link.classList.add("active");
-    link.classList.add("item","active_map");
-    link.textContent = id;
-    link.dataValue = id
-
-    link.onclick = function (e) {
-        var clickedLayer = this.textContent;
-        e.preventDefault();
-        e.stopPropagation();
-
-        var visibility = map.getLayoutProperty(clickedLayer, 'visibility');
-        console.log('可见吗？' + visibility)
-
-        // toggle layer visibility by changing the layout object's visibility property
-        if (visibility === 'visible') {
-                map.setLayoutProperty(clickedLayer, 'visibility', 'none');
-                this.setAttribute("class","item");
-                console.log('bukejian')
-            } else {
-                this.setAttribute("class","active_map");
-                this.classList.add("item")
-                map.setLayoutProperty(clickedLayer, 'visibility', 'visible');
-                console.log('kejian')
-            }
-    };
-
-    var layers = document.getElementById('location');
-    layers.appendChild(link);
-}
-
-// enumerate ids of the layers
-var soil = ['Duplex-Clay Silt then Clay', 'Medium to Heavy Textured Clay with Sand', 'Deep Stratified Sand Silt Clay Gravel',
-            'Silt', 'Shallow Heavy Textured Clay','Sandy Loam'];
-// set up the corresponding toggle button for each layer
-for (var i = 0; i < soil.length; i++) {
-    var id = soil[i];
-
-    var link = document.createElement('c');
-    // link.classList.add("active");
-    link.classList.add("item","active_map");
-    link.textContent = id;
-    link.dataValue = id
-
-    link.onclick = function (e) {
-        var clickedLayer = this.textContent;
-        e.preventDefault();
-        e.stopPropagation();
-
-        var visibility = map.getLayoutProperty(clickedLayer, 'visibility');
-        console.log('可见吗？' + visibility)
-
-        // toggle layer visibility by changing the layout object's visibility property
-        if (visibility === 'visible') {
-                map.setLayoutProperty(clickedLayer, 'visibility', 'none');
-                this.setAttribute("class","item");
-                console.log('bukejian')
-            } else {
-                this.setAttribute("class","active_map");
-                this.classList.add("item")
-                map.setLayoutProperty(clickedLayer, 'visibility', 'visible');
-                console.log('kejian')
-            }
-    };
-
-    var layers = document.getElementById('soil_type');
-    layers.appendChild(link);
-}
-
-// enumerate ids of the layers
-var year = ['Before 2020', '2000-2010', '2010-2020'];
-// set up the corresponding toggle button for each layer
-for (var i = 0; i < year.length; i++) {
-    var id = year[i];
-
-    var link = document.createElement('c');
-    // link.classList.add("active");
-    link.classList.add("item","active_map");
-    link.textContent = id;
-    link.dataValue = id
-
-    link.onclick = function (e) {
-        var clickedLayer = this.textContent;
-        e.preventDefault();
-        e.stopPropagation();
-
-        var visibility = map.getLayoutProperty(clickedLayer, 'visibility');
-        console.log('可见吗？' + visibility)
-
-        // toggle layer visibility by changing the layout object's visibility property
-        if (visibility === 'visible') {
-                map.setLayoutProperty(clickedLayer, 'visibility', 'none');
-                this.setAttribute("class","item");
-                console.log('bukejian')
-            } else {
-                this.setAttribute("class","active_map");
-                this.classList.add("item")
-                map.setLayoutProperty(clickedLayer, 'visibility', 'visible');
-                console.log('kejian')
-            }
-    };
-
-    var layers = document.getElementById('year');
-    layers.appendChild(link);
-}
 

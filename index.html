@@ -14,7 +14,6 @@
     <script src='https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.js'></script>
     <link href='https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css' rel='stylesheet' />
 
-
 </head>
 <body style='background-color: #222222;'>
 
@@ -23,12 +22,17 @@
      <div class="ui container">
          <a href="#top" class="header item" id="title">
              <img src="./img/logo.svg">&nbsp;
-             Urban Forest Visual
+             Green City Visual
          </a>
 
         <a class="ui right item " href="#map_location">
-            Map
+            Tree Map
         </a>
+
+        <a class="ui item " href="#map_location">
+            Schedule Map
+        </a>
+
         <a class="item olive" href="#statistic_location">
             Statistic
         </a>
@@ -51,7 +55,7 @@
     
     <div class="ui container" >
         <!--Home-->
-        <div class="ui container" style='background-image: url(http://melbourneurbanforestvisual.com.au/images/UF_landing.png);'>
+        <div class="ui container" style='background-image: url("./img/green-rooftop-898.png");background-position:right top;background-repeat:no-repeat;background-size:100%;'>
             <div id="top"></div>
             <br />
             <br />
@@ -59,36 +63,35 @@
             <br />
             <br />
             <div class="ui container">
-                <h1 style="color: whitesmoke;">Explore Melbourne's</h1>
-                <h1 style="color: whitesmoke;">Urban Forest</h1>
+                <h1 class="title_tree">Urban Forest in Melbourne</h1>
                 <br />
-                <p style="color: #CCCCC1;">The City of Melbourne maintains more than 70,000 trees. This website enables you to</p>
-                <p style="color:#CCCCC1;">explore this dataset and some of the challenges facing Melbourne’s Urban Forest.</p>
+                <p style="color: #CCCCC1;">Melbourne’s tree population is vast – we have 70,000 council-owned trees,
+                <p style="color: #CCCCC1;">worth around $650 million.  This website enables you to explore this dataset </p>
+                <p style="color:#CCCCC1;">and some of the challenges facing Melbourne’s Urban Forest.</p>
             </div>
             <br />
             <br />
             <div class="ui container">
                 <a href="#map_location">
                     <button class="ui inverted olive basic button" >
-                        <span style="color: #76AD3A;" >Explore the </span><span style='font-weight: bold;color:#76AD3A'>Map</span>
+                        <span style="color: #76AD3A;" >Explore the </span><span style='font-weight: bold;color:#76AD3A'>Tree Map</span>
                     </button>
                 </a>&nbsp;&nbsp;
 
                 <button class="ui inverted olive basic button">
-                    <span style="color: #76AD3A;">Learn about the </span><span style='font-weight: bold;color:#76AD3A'>Issues</span>
+                    <span style="color: #76AD3A;">Learn about the </span><span style='font-weight: bold;color:#76AD3A'>Schedule</span>
                 </button>&nbsp;&nbsp;
                 <button class="ui inverted olive basic button">
-                    <span style="color: #76AD3A;">Get </span><span style='font-weight: bold;color:#76AD3A'>Involved</span>
+                    <span style="color: #76AD3A;">Learn more about </span><span style='font-weight: bold;color:#76AD3A'>Gree City</span>
                 </button>&nbsp;&nbsp;
             </div>
             <br />
+            <br />
+            <br />
             <div class="ui container">
-                <i class="arrow inverted right icon"></i><a href="https://www.melbourne.vic.gov.au/community/greening-the-city/urban-forest/Pages/urban-forest.aspx">Find out more about the Urban Forest Strategy</a>
-                <br />
-                <br />
-                <br />
-                <br />
-                
+                <div><i class="arrow inverted right icon"></i><a href="https://data.melbourne.vic.gov.au/Environment/Trees-with-species-and-dimensions-Urban-Forest-/fp38-wiyy">Find out the data source </a></div>
+                <div><i class="arrow inverted right icon"></i><a href="https://www.melbourne.vic.gov.au/community/greening-the-city/urban-forest/Pages/urban-forest.aspx">Find out more about the Urban Forest Strategy</a></div>
+                <br />                
             </div>
         </div>
 
@@ -101,47 +104,56 @@
             <br />
             <br />
         </div>
-        <h2 class="ui olive header" >MAP</h2>
+        <h2 class="ui olive header" >TREE MAP</h2>
         <hr style="border:1 dashed #987cb9" width="100%" color=#76AD3A SIZE=1>
-        <p style="font-size:17px; color:#989898">Explore the tree data - Individual tree data for City of Melbourne trees is presented below. <b>Pan</b> and <b>Zoom</b> into different areas of Melbourne city, <b>Hover</b> on the Filter Menu to select between different filters, and <b>Hover</b> on tree symbols to reveal details of the tree.</p>
+
+        <h3 style="font-size:17px; color:white">Explore the tree data</h3>
+        <p style="font-size:19px; color:#989898">Individual tree data for City of Melbourne trees is presented below. <b>Pan</b> and <b>Zoom</b> into different areas of Melbourne city, <b>Hover</b> on the Filter Menu to select between different filters, <b>Hover</b> on tree symbols to reveal details of the tree, and <b>Click</b> on the link of each popup windon for the specific tree information on Wiki page.</p>
         <br />
         <div class="ui container">   
             <div class="ui inverted secondary pointing menu">
-                <!-- <a class="active item" id="popup">
-                    <i class="wrench icon"></i>&nbsp;
-                    Hover here to choose layers
+              <button class="active item" id="popup">
+                <!-- <i class="wrench icon"></i>&nbsp;  -->
+                <a href="#menu" style="font-size: 16px;">
+                  &#9776;
+                Filter Menu</a>
+              </button>
+                <!-- <a class="active item" id="popup"> -->
+                    <!-- <i class="wrench icon"></i>&nbsp; -->
+                    <!-- Hover here to choose layers -->
+                <!-- </a> -->
+                <!-- <a class="item" id="popup">
+                    Drag map, click icons for details
                 </a> -->
-                <button class="active item" id="popup">
-                  <!-- <i class="wrench icon"></i>&nbsp;  -->
-                  <a href="#menu" style="font-size: 16px;">
-                    &#9776;
-                  Filter Menu</a>
-                </button>
-                
+
                 <div class="ui inverted fluid popup bottom left transition hidden">
                 <div class="ui four column relaxed divided grid">
                     <div class="column">
                         <h4 class="ui header">Age Description</h4>
                         <div class="ui link list" id=age>                     
                             <!-- <a class="item">Viscose</a> -->
+                            <a></a>  
                         </div>
                     </div>
 
                     <div class="column">
                         <h4 class="ui header">Location</h4>
                         <div class="ui link list" id=location>
+                            <a></a> 
                         </div>
                     </div>
 
                     <div class="column">
                         <h4 class="ui header">Year Planted</h4>
                         <div class="ui link list" id=year>
+                        <a></a>  
                         </div>
                     </div>
 
                     <div class="column">
                         <h4 class="ui header">Soil Types</h4>
                         <div class="ui link list" id=soil_type>
+                        <a></a>
                         </div>
                     </div>
                 </div>
@@ -164,73 +176,53 @@
 
             <div class="row">
               <div class="column" style="color:white" >
-                <h3 style = "text-align: center">Age Description <i class="question circle legend icon" 
-                     data-title="Age Description" 
-                    data-content="Based on Date planted / date of data entry."></i></h3>
-                
+                <h2 style = "text-align: center">Age</h2>
                 
                 <div class="ui middle aligned animated list" style="padding-left: 80px;">
-                    <div class="legend item"
-                    data-title="New tree" 
-                    data-content="A new tree is classified as any tree planted less than one year.">
+                    <div class="item">
                       <img class="ui avatar image" src="./img/tree_new.svg">
                       <div class="content">
                         <div class="header m-color-white">New</div>
                       </div>
                     </div>
-                    <div class="legend item"
-                    data-title="Juvenile tree" 
-                    data-content="A juvenile tree is classified as any young tree planted within the last few years">
+                    <div class="item">
                       <img class="ui avatar image" src="./img/tree_juvenile.svg">
                       <div class="content">
                         <div class="header m-color-white">Juvenile</div>
                       </div>
                     </div>
-                    <div class="legend item"
-                    data-title="Semi-mature tree" 
-                    data-content="Semi-mature trees are no longer young but are yet to reach their full potential">
+                    <div class="item">
                       <img class="ui avatar image" src="./img/tree_semimature.svg">
                       <div class="content">
                         <div class="header m-color-white">Semi-mature</div>
                       </div>
                     </div>
-                    <div class="legend item"
-                    data-title="Mature tree" 
-                    data-content="
-                    A mature tree has reached it’s full potential in the landscape.">
+                    <div class="item">
                         <img class="ui avatar image" src="./img/tree_mature.svg">
                         <div class="content">
                           <div class="header m-color-white">Mature</div>
                         </div>
                     </div>
-                    <div class="legend item"
-                    data-title="Over-mature tree" 
-                    data-content="A Over-mature is classified as old trees which need be cut down recently">
+                    <div class="item">
                     <img class="ui avatar image" src="./img/tree_over_mature.svg">
                         <div class="content">
                             <div class="header m-color-white">Over-mature</div>
                         </div>
                     </div>
-                </div>      
+                </div>
+              
               </div>
               <div class="column" style="color:white">
-                <h3 style = "text-align: center">Location <i class="question circle legend icon" 
-                    data-title="Location" 
-                   data-content="This descibes whether a tree is located within a public park or along a street."></i></h3>
+                <h2 style = "text-align: center">Location</h2>
                 
                 <div class="ui middle aligned animated list" style="padding-left: 95px;">
-                    <div class="legend item"
-                    data-title="Street tree" 
-                    data-content="A Street tree is classified as trees planted beside the street">
+                    <div class="item">
                       <img class="ui avatar image" src="./img/s.svg">
                       <div class="content">
                         <div class="header m-color-white">Street</div>
                       </div>
                     </div>
-
-                    <div class="legend item"
-                    data-title="Park tree" 
-                    data-content="A Street tree is classified as trees planted in the park">
+                    <div class="item">
                     <img class="ui avatar image" src="./img/p.svg">
                         <div class="content">
                             <div class="header m-color-white">Park</div>
@@ -239,32 +231,22 @@
                 </div>
               </div>
               <div class="column" style="color:white">
-                <h3 style = "text-align: center">Year Planted <i class="question circle legend icon" 
-                    data-title="Year Planted" 
-                   data-content="This is generally accurate for trees planted from 2003 onwards, prior to 2003 this indicate the date the trees are added to the inventory."></i></h3>
+                <h2 style = "text-align: center">Year Planted</h2>
                 
                 <div class="ui middle aligned animated list" style= "text-align: center">
-                    <div class="legend item"
-                    data-title="Before 2000 tree" 
-                    data-content="A Before 2000 tree is classified as any tree planted before 2000">
+                    <div class="item">
                       <img class="ui avatar image" src="./img/year3.svg">
                       <div class="content">
                         <div class="header m-color-white">Before 2000</div>
                       </div>
                     </div>
-
-                   <div class="legend item"
-                    data-title="2000 - 2010 tree" 
-                    data-content="A 2000 - 2010 tree is classified as any tree planted between 2000 - 2010">
+                    <div class="item">
                         <img class="ui avatar image" src="./img/year2.svg">
                         <div class="content">
                           <div class="header m-color-white">2000 - 2010</div>
                         </div>
                     </div>
-
-                    <div class="legend item"
-                    data-title="2010 - 2020 tree" 
-                    data-content="A 2010 - 2020 tree is classified as any tree planted between 2010 - 2020">
+                    <div class="item">
                     <img class="ui avatar image" src="./img/year1.svg">
                         <div class="content">
                             <div class="header m-color-white">2010 - 2020</div>
@@ -273,59 +255,40 @@
                 </div>
               </div>
               <div class="column" style="color:white">
-                <h3 style = "text-align: center">Soil Type <i class="question circle legend icon" 
-                    data-title="Soil Type" 
-                   data-content="These polygons represent approximate native soil sub-bases and derived textures based on digitized maps from the Geological Survey of Victoria (c. 1956). Soils are expected to be extensively modified from these types throughout Melbourne due to extensive disturbance, and cut and fill associated with the city's development."></i></h3>
+                <h2 style = "text-align: center">Soil Type</h2>
                 
                 <div class="ui middle aligned animated list" style="padding-left: 30px;">
-                    <div class="legend item"
-                    data-title="Duplex-Clay Silt then Clay" 
-                    data-content="Texture in duplex soils is highly variable, with the top-soils ranging from coarse sand to clay loam and the subsoils from light to heavy clay. ">
+                    <div class="item">
                       <img class="ui avatar image" src="./img/Duplex-Clay.svg">
                       <div class="content">
                         <div class="header m-color-white">Duplex-Clay Silt then Clay</div>
                       </div>
                     </div>
-
-                    <div class="legend item"
-                    data-title="Textured Clay with Sand" 
-                    data-content="Textured Clay with Sand">
+                    <div class="item">
                       <img class="ui avatar image" src="./img/textured.svg">
                       <div class="content">
                         <div class="header m-color-white">Textured Clay with Sand</div>
                       </div>
                     </div>
-
-                    <div class="legend item"
-                    data-title="Stratified Sand/Silt/Clay/Gravel" 
-                    data-content="Stratified Sand/Silt/Clay/Gravel">
+                    <div class="item">
                       <img class="ui avatar image" src="./img/stratotified.svg">
                       <div class="content">
                         <div class="header m-color-white">Stratified Sand/Silt/Clay/Gravel</div>
                       </div>
                     </div>
-
-                    <div class="legend item"
-                    data-title="Silts" 
-                    data-content="Silt is granular material of a size between sand and clay, whose mineral origin is quartz and feldspar. ">
+                    <div class="item">
                         <img class="ui avatar image" src="./img/silt.svg">
                         <div class="content">
                           <div class="header m-color-white">Silt</div>
                         </div>
                     </div>
-
-                    <div class="legend item"
-                    data-title="Juvenile trees" 
-                    data-content="In the north west, it's more common to find shallow-dark and reddish-brown heavy clay soils, with a thin loamy topsoil. They benefit from the addition of organic matter. Gypsum can be used to improve soil structure.">
+                    <div class="item">
                     <img class="ui avatar image" src="./img/shallow.svg">
                         <div class="content">
                             <div class="header m-color-white">Shallow Heavy Textured Clay</div>
                         </div>
                     </div>
-
-                    <div class="legend item"
-                    data-title="Sandy Loam" 
-                    data-content="Sandy loam is a type of soil used for gardening. This soil type is normally made up of sand along with varying amounts of silt and clay. Many people prefer sandy loam soil for their gardening because this type of soil normally allows for good drainage.">
+                    <div class="item">
                     <img class="ui avatar image" src="./img/sandy.svg">
                         <div class="content">
                             <div class="header m-color-white">Sandy Loam</div>
@@ -334,13 +297,51 @@
                 </div>
               </div>
             </div>
+            
+            <h2 class="ui olive header">Why trees are important for Melbourne?</h2>
+            <br />
+            
+            
+            <div class="ui grid">
+                <div class="eight wide column">
+                    <h2 class="sub_title">Environmental, human, ecological and economic benefits of trees</h2>
+                    <img class="ui large rounded image" src="https://www.melbourne.vic.gov.au/SiteCollectionImages/benefits-of-trees.jpg" alt="">
+                </div>
+                <div class="eight wide column">
+                    <h2 class="sub_title">Benefits of trees</h2>
+                    <br>
+                    <h3 style="color:#989898">
+                        Trees are a defining part of Melbourne and our parks, gardens, green spaces and tree-lined streets contribute enormously to the liveability of the city.
+                        <br/><br/>
+                        ​But the trees are now under threat. More than a decade of drought, severe water restrictions and periods of extreme heat, combined with an ageing tree stock, have put our trees under immense stress and many are now in a state of accelerated decline. As a result, we expect to lose 27 per cent of our current tree population in the next decade and 44 per cent in the next 20 years.
+                        <br/><br/>
+                        Combined with this loss, Melbourne’s urban forest is facing two significant future challenges: climate change and urban growth.
+                        
+                        The City of Melbourne’s Urban Forest Strategy seeks to manage this change and protect against future vulnerability by providing a robust strategic framework for the evolution and longevity of Melbourne's urban forest.
+                    </h3>
+                    
+                    <h3 style="color:#989898"></h3>
+                </div>
+
+            
+            </div>
 
 
 
         <br />
         <br />
         
-    
+          <!--URBAN FOREST ISSUES-->
+        <div id="issues_location">
+          <br />
+          <br />
+        </div>
+        <h2 class="ui olive header" >URBAN FOREST ISSUES</h2>
+        <hr style="border:1 dashed #987cb9" width="100%" color=#76AD3A SIZE=1>
+        <h3 style="font-size:19px; color:white">How important is the age diversity?</h3>
+        <p style="font-size:17px; color:#989898">.</p>
+        <br />
+
 
 
         <!--statistic -->
@@ -350,7 +351,9 @@
         </div>
         <h2 class="ui olive header" >Statistic</h2>
         <hr style="border:1 dashed #987cb9" width="100%" color=#76AD3A SIZE=1>
-        <h3 style="color:#989898">Details</h3>
+        <h3 style="font-size:17px; color:white">Figures about current trees in Melbourne</h3>
+        <p style="font-size:19px; color:#989898">Tree's information including the number of trees are planted each year and whether they are planted in park or street, tree's life expectency, and common genus are shown in the graph below, respectively.</p>
+
         <br />
         <!--Tableau chart-->
         <div class="ui container">
@@ -368,10 +371,12 @@
         </div>
         <h2 class="ui olive header" >Planting Schedule</h2>
         <hr style="border:1 dashed #987cb9" width="100%" color=#76AD3A SIZE=1>
+        <h3 style="font-size:17px; color:white">Future planting schedule</h3>
 
-        <p style="font-size:17px; color:#989898"> - Hover street will show a popup which includes schedule time and street name<br>
-        - The area schedule count will dynamically show the number of schedules for the area shown in the maps<br>
-        - To filter streets by schedule time, select the schedule time in the legend<br></p>
+        <p style="font-size:19px; color:#989898"> The Planting schedule shows when each street will be planted and the instensity of the planting will be. To maximise the use of the map, you can:</p>
+        <p style="font-size:19px; color:#989898">- <b>Hover</b> street will show a popup which includes schedule time and street name<br>
+        - The area schedule count will dynamically show the number of schedules for the area shown in the maps when you <b>Zoom</b> in or out<br>
+        - To filter streets by schedule time, <b>Select</b> the schedule time in the legend<br></p>
         <br />
         <iframe width="100%" height="520" frameborder="0" src="https://lisalisalisa.carto.com/builder/8bdad79b-4d69-4e52-9769-2c4725f562d5/embed" allowfullscreen webkitallowfullscreen mozallowfullscreen oallowfullscreen msallowfullscreen></iframe>
         <p style="font-size:17px; color: white"><br>The tree planting map shows the schedule of each street that will be planted. There are streets where tree planting is completed. For the rest, the schedule time information is shown in the popup on hover or can be visualized by color. When prioritising where and when to plant, it is important to spend resources on the streets that are most in need. For example, which street has highest intensity of people where low canopy cover exsits; which streets will gain more by planting trees etc.</p>
@@ -436,6 +441,185 @@
 
         
     </script>
+    
+    <script type="text/javascript">
+        window.onload = function () {
+
+        // enumerate ids of the layers
+        var age_description = ['New','Juvenile','Semi-mature','Mature','Over-mature',];
+        // set up the corresponding toggle button for each layer
+        for (var i = 0; i < age_description.length; i++) {
+            var id = age_description[i];
+            var link = document.createElement('b');
+            // link.classList.add("active");
+            link.classList.add("item","active_map");
+            link.textContent = id;
+            link.dataValue = id
+            map.setLayoutProperty(id, 'visibility', 'visible');
+            link.onclick = function (e) {
+                var clickedLayer = this.textContent;
+                e.preventDefault();
+                e.stopPropagation();
+
+                var visibility = map.getLayoutProperty(clickedLayer, 'visibility');
+                console.log('可见吗？' + visibility)
+
+                // toggle layer visibility by changing the layout object's visibility property
+                if (visibility === 'visible') {
+                        map.setLayoutProperty(clickedLayer, 'visibility', 'none');
+                        this.setAttribute("class","item");
+                        console.log('bukejian')
+                    } else {
+                        this.setAttribute("class","active_map");
+                        this.classList.add("item")
+                        //this.setAttribute("color","black");
+                        map.setLayoutProperty(clickedLayer, 'visibility', 'visible');
+                        console.log('kejian')
+                    }
+            };
+
+            var layers = document.getElementById('age');
+            layers.appendChild(link);
+            if(i != 0){
+                map.setLayoutProperty(id, 'visibility', 'none');
+                link.setAttribute("class","item");
+                console.log('bukejian')
+            }
+        }
+
+        // enumerate ids of the layers
+        var locate = ['Location-Street','Location-Park'];
+        // set up the corresponding toggle button for each layer
+        for (var i = 0; i < locate.length; i++) {
+            var id = locate[i];
+
+            var link = document.createElement('b');
+            // link.classList.add("active");
+            link.classList.add("item","active_map");
+            link.textContent = id;
+            link.dataValue = id
+            map.setLayoutProperty(id, 'visibility', 'visible');
+            link.onclick = function (e) {
+                var clickedLayer = this.textContent;
+                e.preventDefault();
+                e.stopPropagation();
+
+                var visibility = map.getLayoutProperty(clickedLayer, 'visibility');
+                console.log('可见吗？' + visibility)
+
+                // toggle layer visibility by changing the layout object's visibility property
+                if (visibility === 'visible') {
+                        map.setLayoutProperty(clickedLayer, 'visibility', 'none');
+                        this.setAttribute("class","item");
+                        console.log('bukejian')
+                    } else {
+                        this.setAttribute("class","active_map");
+                        this.classList.add("item")
+                        map.setLayoutProperty(clickedLayer, 'visibility', 'visible');
+                        console.log('kejian')
+                    }
+            };
+
+            var layers = document.getElementById('location');
+            layers.appendChild(link);
+            if(i != 0){
+                map.setLayoutProperty(id, 'visibility', 'none');
+                link.setAttribute("class","item");
+                console.log('bukejian')
+            }
+        }
+
+        // enumerate ids of the layers
+        var soil = ['Duplex-Clay Silt then Clay', 'Medium to Heavy Textured Clay with Sand', 'Deep Stratified Sand Silt Clay Gravel',
+                    'Silt', 'Shallow Heavy Textured Clay','Sandy Loam'];
+        // set up the corresponding toggle button for each layer
+        for (var i = 0; i < soil.length; i++) {
+            var id = soil[i];
+
+            var link = document.createElement('c');
+            // link.classList.add("active");
+            link.classList.add("item","active_map");
+            link.textContent = id;
+            link.dataValue = id
+            map.setLayoutProperty(id, 'visibility', 'visible');
+            link.onclick = function (e) {
+                var clickedLayer = this.textContent;
+                e.preventDefault();
+                e.stopPropagation();
+
+                var visibility = map.getLayoutProperty(clickedLayer, 'visibility');
+                console.log('可见吗？' + visibility)
+
+                // toggle layer visibility by changing the layout object's visibility property
+                if (visibility === 'visible') {
+                        map.setLayoutProperty(clickedLayer, 'visibility', 'none');
+                        this.setAttribute("class","item");
+                        console.log('bukejian')
+                    } else {
+                        this.setAttribute("class","active_map");
+                        this.classList.add("item")
+                        map.setLayoutProperty(clickedLayer, 'visibility', 'visible');
+                        console.log('kejian')
+                    }
+            };
+            if(i != 0){
+                map.setLayoutProperty(id, 'visibility', 'none');
+                link.setAttribute("class","item");
+                console.log('bukejian')
+            }
+            var layers = document.getElementById('soil_type');
+            layers.appendChild(link);
+        }
+
+        // enumerate ids of the layers
+        var year = ['Before 2000', '2000-2010', '2010-2020'];
+        // set up the corresponding toggle button for each layer
+        for (var i = 0; i < year.length; i++) {
+            var id = year[i];
+
+            var link = document.createElement('c');
+            // link.classList.add("active");
+            link.classList.add("item","active_map");
+            link.textContent = id;
+            link.dataValue = id
+            map.setLayoutProperty(id, 'visibility', 'visible');
+            link.onclick = function (e) {
+                var clickedLayer = this.textContent;
+                e.preventDefault();
+                e.stopPropagation();
+
+                var visibility = map.getLayoutProperty(clickedLayer, 'visibility');
+                console.log('可见吗？' + visibility)
+
+                // toggle layer visibility by changing the layout object's visibility property
+                if (visibility === 'visible') {
+                        map.setLayoutProperty(clickedLayer, 'visibility', 'none');
+                        this.setAttribute("class","item");
+                        console.log('bukejian')
+                    } else {
+                        this.setAttribute("class","active_map");
+                        this.classList.add("item")
+                        map.setLayoutProperty(clickedLayer, 'visibility', 'visible');
+                        console.log('kejian')
+                    }
+            };
+            if(i != 0){
+                map.setLayoutProperty(id, 'visibility', 'none');
+                link.setAttribute("class","item");
+                console.log('bukejian')
+            }
+            var layers = document.getElementById('year');
+            layers.appendChild(link);
+        }
+        var menu = ['age', 'location', 'soil_type', 'year'];
+        for (var i = 0; i < menu.length; i++) {
+            var layers = document.getElementById(menu[i]);
+            var link = document.createElement('b');
+            layers.appendChild(link);
+        }
+    }
+
+    </script>  
     
    
 </body>
