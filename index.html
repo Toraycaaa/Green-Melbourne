@@ -29,15 +29,33 @@
             Tree Map
         </a>
 
-        <a class="item olive" href="#statistic_location">
-            Statistic
+<<<<<<< HEAD
+=======
+        <a class="ui item " href="#tree_important_location">
+          Why trees are important for Melbourne
         </a>
 
+        <a class="ui item " href="#issues_location">
+          Urban forest issues
+        </a>
+        
+>>>>>>> 63ce88cdef29340885846175592161294554a318
+        <a class="item olive" href="#statistic_location">
+          Statistic
+        </a>
+
+<<<<<<< HEAD
         <a class="ui item " href="#schedule_location">
             Schedule Map
         </a>
 
+=======
+        <a class="ui item " href="#map_location">
+            Schedule Map
+        </a>
+>>>>>>> 63ce88cdef29340885846175592161294554a318
 
+        
 
      </div>
  </div>
@@ -110,7 +128,7 @@
             <br />
             <br />
         </div>
-        <h2 class="ui olive header" >TREE MAP</h2>
+        <h2 class="ui olive header" >Tree map</h2>
         <hr style="border:1 dashed #987cb9" width="100%" color=#76AD3A SIZE=1>
 
         <h3 style="font-size:17px; color:white">Explore the tree data</h3>
@@ -182,126 +200,182 @@
 
             <div class="row">
               <div class="column" style="color:white" >
-                <h2 style = "text-align: center">Age</h2>
+                <h3 style = "text-align: center">Age Description <i class="question circle legend icon" 
+                  data-title="Age Description" 
+                 data-content="Based on Date planted / date of data entry."></i></h3>
                 
                 <div class="ui middle aligned animated list" style="padding-left: 80px;">
-                    <div class="item">
-                      <img class="ui avatar image" src="./img/tree_new.svg">
+                  <div class="legend item"
+                  data-title="New tree" 
+                  data-content="A new tree is classified as any tree planted less than one year.">
+                    <img class="ui avatar image" src="./img/tree_new.svg">
+                    <div class="content">
+                      <div class="header m-color-white">New</div>
+                    </div>
+                  </div>
+                  <div class="legend item"
+                  data-title="Juvenile tree" 
+                  data-content="A juvenile tree is classified as any young tree planted within the last few years">
+                    <img class="ui avatar image" src="./img/tree_juvenile.svg">
+                    <div class="content">
+                      <div class="header m-color-white">Juvenile</div>
+                    </div>
+                  </div>
+                  <div class="legend item"
+                  data-title="Semi-mature tree" 
+                  data-content="Semi-mature trees are no longer young but are yet to reach their full potential">
+                    <img class="ui avatar image" src="./img/tree_semimature.svg">
+                    <div class="content">
+                      <div class="header m-color-white">Semi-mature</div>
+                    </div>
+                  </div>
+                  <div class="legend item"
+                  data-title="Mature tree" 
+                  data-content="
+                  A mature tree has reached it’s full potential in the landscape.">
+                      <img class="ui avatar image" src="./img/tree_mature.svg">
                       <div class="content">
-                        <div class="header m-color-white">New</div>
+                        <div class="header m-color-white">Mature</div>
                       </div>
-                    </div>
-                    <div class="item">
-                      <img class="ui avatar image" src="./img/tree_juvenile.svg">
+                  </div>
+                  <div class="legend item"
+                  data-title="Over-mature tree" 
+                  data-content="A Over-mature is classified as old trees which need be cut down recently">
+                  <img class="ui avatar image" src="./img/tree_over_mature.svg">
                       <div class="content">
-                        <div class="header m-color-white">Juvenile</div>
+                          <div class="header m-color-white">Over-mature</div>
                       </div>
-                    </div>
-                    <div class="item">
-                      <img class="ui avatar image" src="./img/tree_semimature.svg">
-                      <div class="content">
-                        <div class="header m-color-white">Semi-mature</div>
-                      </div>
-                    </div>
-                    <div class="item">
-                        <img class="ui avatar image" src="./img/tree_mature.svg">
-                        <div class="content">
-                          <div class="header m-color-white">Mature</div>
-                        </div>
-                    </div>
-                    <div class="item">
-                    <img class="ui avatar image" src="./img/tree_over_mature.svg">
-                        <div class="content">
-                            <div class="header m-color-white">Over-mature</div>
-                        </div>
-                    </div>
+                  </div>
                 </div>
               
               </div>
               <div class="column" style="color:white">
-                <h2 style = "text-align: center">Location</h2>
-                
+                <h3 style = "text-align: center">Location <i class="question circle legend icon" 
+                  data-title="Location" 
+                 data-content="This descibes whether a tree is located within a public park or along a street."></i></h3>
+              
                 <div class="ui middle aligned animated list" style="padding-left: 95px;">
-                    <div class="item">
-                      <img class="ui avatar image" src="./img/s.svg">
+                  <div class="legend item"
+                  data-title="Street tree" 
+                  data-content="A Street tree is classified as trees planted beside the street">
+                    <img class="ui avatar image" src="./img/s.svg">
+                    <div class="content">
+                      <div class="header m-color-white">Street</div>
+                    </div>
+                  </div>
+
+                  <div class="legend item"
+                  data-title="Park tree" 
+                  data-content="A Street tree is classified as trees planted in the park">
+                  <img class="ui avatar image" src="./img/p.svg">
                       <div class="content">
-                        <div class="header m-color-white">Street</div>
+                          <div class="header m-color-white">Park</div>
                       </div>
-                    </div>
-                    <div class="item">
-                    <img class="ui avatar image" src="./img/p.svg">
-                        <div class="content">
-                            <div class="header m-color-white">Park</div>
-                        </div>
-                    </div>
+                  </div>
                 </div>
               </div>
               <div class="column" style="color:white">
-                <h2 style = "text-align: center">Year Planted</h2>
-                
-                <div class="ui middle aligned animated list" style= "text-align: center">
-                    <div class="item">
-                      <img class="ui avatar image" src="./img/year3.svg">
+                <h3 style = "text-align: center">Year Planted <i class="question circle legend icon" 
+                  data-title="Year Planted" 
+                 data-content="This is generally accurate for trees planted from 2003 onwards, prior to 2003 this indicate the date the trees are added to the inventory."></i></h3>
+              
+              <div class="ui middle aligned animated list" style= "text-align: center">
+                  <div class="legend item"
+                  data-title="Before 2000 tree" 
+                  data-content="A Before 2000 tree is classified as any tree planted before 2000">
+                    <img class="ui avatar image" src="./img/year3.svg">
+                    <div class="content">
+                      <div class="header m-color-white">Before 2000</div>
+                    </div>
+                  </div>
+
+                 <div class="legend item"
+                  data-title="2000 - 2010 tree" 
+                  data-content="A 2000 - 2010 tree is classified as any tree planted between 2000 - 2010">
+                      <img class="ui avatar image" src="./img/year2.svg">
                       <div class="content">
-                        <div class="header m-color-white">Before 2000</div>
+                        <div class="header m-color-white">2000 - 2010</div>
                       </div>
-                    </div>
-                    <div class="item">
-                        <img class="ui avatar image" src="./img/year2.svg">
-                        <div class="content">
-                          <div class="header m-color-white">2000 - 2010</div>
-                        </div>
-                    </div>
-                    <div class="item">
-                    <img class="ui avatar image" src="./img/year1.svg">
-                        <div class="content">
-                            <div class="header m-color-white">2010 - 2020</div>
-                        </div>
-                    </div>
+                  </div>
+
+                  <div class="legend item"
+                  data-title="2010 - 2020 tree" 
+                  data-content="A 2010 - 2020 tree is classified as any tree planted between 2010 - 2020">
+                  <img class="ui avatar image" src="./img/year1.svg">
+                      <div class="content">
+                          <div class="header m-color-white">2010 - 2020</div>
+                      </div>
+                  </div>
                 </div>
               </div>
               <div class="column" style="color:white">
-                <h2 style = "text-align: center">Soil Type</h2>
-                
-                <div class="ui middle aligned animated list" style="padding-left: 30px;">
-                    <div class="item">
-                      <img class="ui avatar image" src="./img/Duplex-Clay.svg">
+                <h3 style = "text-align: center">Soil Type <i class="question circle legend icon" 
+                  data-title="Soil Type" 
+                 data-content="These polygons represent approximate native soil sub-bases and derived textures based on digitized maps from the Geological Survey of Victoria (c. 1956). Soils are expected to be extensively modified from these types throughout Melbourne due to extensive disturbance, and cut and fill associated with the city's development."></i></h3>
+              
+              <div class="ui middle aligned animated list" style="padding-left: 30px;">
+                  <div class="legend item"
+                  data-title="Duplex-Clay Silt then Clay" 
+                  data-content="Texture in duplex soils is highly variable, with the top-soils ranging from coarse sand to clay loam and the subsoils from light to heavy clay. ">
+                    <img class="ui avatar image" src="./img/Duplex-Clay.svg">
+                    <div class="content">
+                      <div class="header m-color-white">Duplex-Clay Silt then Clay</div>
+                    </div>
+                  </div>
+
+                  <div class="legend item"
+                  data-title="Textured Clay with Sand" 
+                  data-content="Textured Clay with Sand">
+                    <img class="ui avatar image" src="./img/textured.svg">
+                    <div class="content">
+                      <div class="header m-color-white">Textured Clay with Sand</div>
+                    </div>
+                  </div>
+
+                  <div class="legend item"
+                  data-title="Stratified Sand/Silt/Clay/Gravel" 
+                  data-content="Stratified Sand/Silt/Clay/Gravel">
+                    <img class="ui avatar image" src="./img/stratotified.svg">
+                    <div class="content">
+                      <div class="header m-color-white">Stratified Sand/Silt/Clay/Gravel</div>
+                    </div>
+                  </div>
+
+                  <div class="legend item"
+                  data-title="Silts" 
+                  data-content="Silt is granular material of a size between sand and clay, whose mineral origin is quartz and feldspar. ">
+                      <img class="ui avatar image" src="./img/silt.svg">
                       <div class="content">
-                        <div class="header m-color-white">Duplex-Clay Silt then Clay</div>
+                        <div class="header m-color-white">Silt</div>
                       </div>
-                    </div>
-                    <div class="item">
-                      <img class="ui avatar image" src="./img/textured.svg">
+                  </div>
+
+                  <div class="legend item"
+                  data-title="Juvenile trees" 
+                  data-content="In the north west, it's more common to find shallow-dark and reddish-brown heavy clay soils, with a thin loamy topsoil. They benefit from the addition of organic matter. Gypsum can be used to improve soil structure.">
+                  <img class="ui avatar image" src="./img/shallow.svg">
                       <div class="content">
-                        <div class="header m-color-white">Textured Clay with Sand</div>
+                          <div class="header m-color-white">Shallow Heavy Textured Clay</div>
                       </div>
-                    </div>
-                    <div class="item">
-                      <img class="ui avatar image" src="./img/stratotified.svg">
+                  </div>
+
+                  <div class="legend item"
+                  data-title="Sandy Loam" 
+                  data-content="Sandy loam is a type of soil used for gardening. This soil type is normally made up of sand along with varying amounts of silt and clay. Many people prefer sandy loam soil for their gardening because this type of soil normally allows for good drainage.">
+                  <img class="ui avatar image" src="./img/sandy.svg">
                       <div class="content">
-                        <div class="header m-color-white">Stratified Sand/Silt/Clay/Gravel</div>
+                          <div class="header m-color-white">Sandy Loam</div>
                       </div>
-                    </div>
-                    <div class="item">
-                        <img class="ui avatar image" src="./img/silt.svg">
-                        <div class="content">
-                          <div class="header m-color-white">Silt</div>
-                        </div>
-                    </div>
-                    <div class="item">
-                    <img class="ui avatar image" src="./img/shallow.svg">
-                        <div class="content">
-                            <div class="header m-color-white">Shallow Heavy Textured Clay</div>
-                        </div>
-                    </div>
-                    <div class="item">
-                    <img class="ui avatar image" src="./img/sandy.svg">
-                        <div class="content">
-                            <div class="header m-color-white">Sandy Loam</div>
-                        </div>
-                    </div>
+                  </div>
                 </div>
               </div>
+            </div>
+            
+
+             <!--Why trees are important for Melbourne?-->
+            <div id="tree_important_location">
+              <br />
+              <br />
             </div>
             
             <h2 class="ui olive header">Why trees are important for Melbourne?</h2>
@@ -311,20 +385,22 @@
             
             <div class="ui grid">
                 <div class="eight wide column">
-                    <h2 class="sub_title">Environmental, human, ecological and economic benefits of trees</h2>
-                    <img class="ui large rounded image" src="https://www.melbourne.vic.gov.au/SiteCollectionImages/benefits-of-trees.jpg" alt="">
+                    <img class="ui large rounded image" src="https://www.melbourne.vic.gov.au/SiteCollectionImages/benefits-of-trees.jpg" alt=”“>
                 </div>
                 <div class="eight wide column">
-                    <h2 class="sub_title">Benefits of trees</h2>
-                    <br>
+
+                    <br/><br/>
+                    <h2 class="sub_title">Benefits of trees:</h2>
+                    <h2 class="sub_title">Environmental, human, ecological and economic benefits of trees</h2>
+                    
                     <h3 style="color:#989898">
-                        Trees are a defining part of Melbourne and our parks, gardens, green spaces and tree-lined streets contribute enormously to the liveability of the city.
+                        Trees provide a wealth of benefits for our environment, our health, and our economy. They provide critical ecosystem services such as air and water filtration, shade, habitat, oxygen, carbon sequestration and nutrient cycling. 
                         <br/><br/>
-                        ​But the trees are now under threat. More than a decade of drought, severe water restrictions and periods of extreme heat, combined with an ageing tree stock, have put our trees under immense stress and many are now in a state of accelerated decline. As a result, we expect to lose 27 per cent of our current tree population in the next decade and 44 per cent in the next 20 years.
+                        At the city scale, our urban forest helps to adapt our city to climate change, reducing the impact of floods and the urban heat island effect.
                         <br/><br/>
-                        Combined with this loss, Melbourne’s urban forest is facing two significant future challenges: climate change and urban growth.
+                        Trees also provide amazing health and wellbeing benefits, providing a connection to nature that can sometimes be missing in urban areas.    
+                        <br/><br/>
                         
-                        The City of Melbourne’s Urban Forest Strategy seeks to manage this change and protect against future vulnerability by providing a robust strategic framework for the evolution and longevity of Melbourne's urban forest.
                     </h3>
                     
                     <h3 style="color:#989898"></h3>
@@ -344,7 +420,7 @@
           <br />
         </div>
         
-        <h2 class="ui olive header" >URBAN FOREST ISSUES</h2>
+        <h2 class="ui olive header" >Urban forest issues</h2>
         <hr style="border:1 dashed #987cb9" width="100%" color=#76AD3A SIZE=1>
         <br/>
         <div class="ui grid">
@@ -426,22 +502,10 @@
     <br />
     <br />
     <br />
-
-
-
-
-
-
-
-
-
-
-    <!--footer-->
-    <footer class="ui inverted vertical segment" align="center"> 
-        
-            
-        
-    </footer>
+    <br />
+    <br />
+    <br />
+    <br />
 
     <script src="./trees.js"></script>
     <!--jquery-->
