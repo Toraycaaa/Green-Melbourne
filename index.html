@@ -120,12 +120,13 @@
                             <a></a>                        
                             <!-- <a class="item">Viscose</a> -->
                         </div>
+                        <a></a>  
                     </div>
 
                     <div class="column">
                         <h4 class="ui header">Location</h4>
                         <div class="ui link list" id=location>
-                        <a></a> 
+                            <a></a> 
                         </div>
                     </div>
 
@@ -452,7 +453,7 @@
         // set up the corresponding toggle button for each layer
         for (var i = 0; i < age_description.length; i++) {
             var id = age_description[i];
-            var link = document.createElement('a');
+            var link = document.createElement('b');
             // link.classList.add("active");
             link.classList.add("item","active_map");
             link.textContent = id;
@@ -474,6 +475,7 @@
                     } else {
                         this.setAttribute("class","active_map");
                         this.classList.add("item")
+                        //this.setAttribute("color","black");
                         map.setLayoutProperty(clickedLayer, 'visibility', 'visible');
                         console.log('kejian')
                     }
@@ -481,14 +483,12 @@
 
             var layers = document.getElementById('age');
             layers.appendChild(link);
-            
             if(i != 0){
                 map.setLayoutProperty(id, 'visibility', 'none');
                 link.setAttribute("class","item");
                 console.log('bukejian')
             }
         }
-
 
         // enumerate ids of the layers
         var locate = ['Location-Street','Location-Park'];
@@ -614,7 +614,14 @@
             var layers = document.getElementById('year');
             layers.appendChild(link);
         }
+        var menu = ['age', 'location', 'soil_type', 'year'];
+        for (var i = 0; i < menu.length; i++) {
+            var layers = document.getElementById(menu[i]);
+            var link = document.createElement('b');
+            layers.appendChild(link);
+        }
     }
+
     </script>  
     
    
