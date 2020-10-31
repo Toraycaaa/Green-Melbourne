@@ -79,3 +79,18 @@ margin-right: 5px;
     color:black !important;
     border:1px solid gray !important;
 }
+.title_tree {
+  font-size: 40px;
+  font-weight: bolder;
+  color: white;
+}
+
+.green_color {
+  color: #7FB562 !important;
+}
+
+.sub_title{
+  color: whitesmoke;
+  font-size: large;
+}
+
