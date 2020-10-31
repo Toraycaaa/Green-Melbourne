@@ -674,7 +674,7 @@
                         map.setLayoutProperty(clickedLayer, 'visibility', 'none');
                         this.setAttribute("class","item");
                         console.log('bukejian');
-                        current_visible_ids.delete(clickedLayer);
+                        //current_visible_ids.delete(clickedLayer);
                 } else {
                     /*if (current_visible_layer != menu[3]){
                          console.log(current_visible_ids);
@@ -687,7 +687,7 @@
                         current_visible_ids = new Set([]);
                         current_visible_layer = menu[3];
                     }*/
-                    current_visible_ids.add(clickedLayer)
+                    //current_visible_ids.add(clickedLayer)
                     this.setAttribute("class","active_map");
                     this.classList.add("item")
                     //this.setAttribute("color","black");
