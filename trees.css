@@ -76,4 +76,18 @@ margin-right: 5px;
 .active_map {
     background-color: #1111DD !important;
 }
+.title_tree {
+  font-size: 40px;
+  font-weight: bolder;
+  color: white;
+}
+
+.green_color {
+  color: #7FB562 !important;
+}
+
+.sub_title{
+  color: whitesmoke;
+  font-size: large;
+}
 
