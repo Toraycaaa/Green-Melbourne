@@ -49,7 +49,7 @@ map.on('load', function() {
                                                 + "Click here for more" + '</a></h3>').addTo(map);
         });
 
-<<<<<<< HEAD
+
 
         // // Center the map on the coordinates of any clicked symbol from the 'symbols' layer.
         // map.on('click', Layers[i], function (e) {
@@ -67,12 +67,7 @@ map.on('load', function() {
         // map.on('mouseleave', Layers[i], function () {
         //     map.getCanvas().style.cursor = '';
         // });
-=======
-        map.on('mouseleave', Layers[i], function () {
-            map.getCanvas().style.cursor = '';
-            popup.remove();
-        });
->>>>>>> 148cc84f9b3542df8ecf54f34ee9df3288b7cebe
+
     
     }
 });
