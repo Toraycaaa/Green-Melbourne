@@ -23,7 +23,7 @@ map.on('load', function() {
         closeOnClick: true
     });
 
-    var Layers = ['New', 'Juvenile','Semi-mature','Mature','Over-mature'];
+    var Layers = ['New', 'Juvenile','Semi-mature','Mature','Over-mature', 'Location-Street','Location-Park','Before 2000', '2000-2010', '2010-2020'];
     for (var i = 0; i < Layers.length; i++) {
         map.on('mouseenter', Layers[i], function (e) {
         // Change the cursor style as a UI indicator.
