@@ -108,14 +108,23 @@
         <hr style="border:1 dashed #987cb9" width="100%" color=#76AD3A SIZE=1>
 
         <h3 style="font-size:17px; color:white">Explore the tree data</h3>
-        <p style="font-size:19px; color:#989898">Individual tree data for City of Melbourne trees is presented below. <b>Pan</b> and <b>Zoom</b> into different areas of Melbourne city, <b>Hover</b> on the Filter Menu to select between different filters, and <b>Hover</b> on tree symbols to reveal details of the tree.</p>
+        <p style="font-size:19px; color:#989898">Individual tree data for City of Melbourne trees is presented below. <b>Pan</b> and <b>Zoom</b> into different areas of Melbourne city, <b>Hover</b> on the Filter Menu to select between different filters, <b>Hover</b> on tree symbols to reveal details of the tree, and <b>Click</b> on the link of each popup windon for the specific tree information on Wiki page.</p>
         <br />
         <div class="ui container">   
             <div class="ui inverted secondary pointing menu">
-                <a class="active item" id="popup">
-                    <i class="wrench icon"></i>&nbsp;
-                    Hover here to choose layers
-                </a>
+              <button class="active item" id="popup">
+                <!-- <i class="wrench icon"></i>&nbsp;  -->
+                <a href="#menu" style="font-size: 16px;">
+                  &#9776;
+                Filter Menu</a>
+              </button>
+                <!-- <a class="active item" id="popup"> -->
+                    <!-- <i class="wrench icon"></i>&nbsp; -->
+                    <!-- Hover here to choose layers -->
+                <!-- </a> -->
+                <!-- <a class="item" id="popup">
+                    Drag map, click icons for details
+                </a> -->
 
                 <div class="ui inverted fluid popup bottom left transition hidden">
                 <div class="ui four column relaxed divided grid">
@@ -338,7 +347,9 @@
         </div>
         <h2 class="ui olive header" >Statistic</h2>
         <hr style="border:1 dashed #987cb9" width="100%" color=#76AD3A SIZE=1>
-        <h3 style="color:#989898">Details</h3>
+        <h3 style="font-size:17px; color:white">Figures about current trees in Melbourne</h3>
+        <p style="font-size:19px; color:#989898">Tree's information including the number of trees are planted each year and whether they are planted in park or street, tree's life expectency, and common genus are shown in the graph below, respectively.</p>
+
         <br />
         <!--Tableau chart-->
         <div class="ui container">
@@ -355,10 +366,12 @@
         </div>
         <h2 class="ui olive header" >Planting Schedule</h2>
         <hr style="border:1 dashed #987cb9" width="100%" color=#76AD3A SIZE=1>
+        <h3 style="font-size:17px; color:white">Future planting schedule</h3>
 
-        <p style="font-size:17px; color:#989898"> - Hover street will show a popup which includes schedule time and street name<br>
-        - The area schedule count will dynamically show the number of schedules for the area shown in the maps<br>
-        - To filter streets by schedule time, select the schedule time in the legend<br></p>
+        <p style="font-size:19px; color:#989898"> The Planting schedule shows when each street will be planted and the instensity of the planting will be. To maximise the use of the map, you can:</p>
+        <p style="font-size:19px; color:#989898">- <b>Hover</b> street will show a popup which includes schedule time and street name<br>
+        - The area schedule count will dynamically show the number of schedules for the area shown in the maps when you <b>Zoom</b> in or out<br>
+        - To filter streets by schedule time, <b>Select</b> the schedule time in the legend<br></p>
         <br />
         <iframe width="100%" height="520" frameborder="0" src="https://lisalisalisa.carto.com/builder/8bdad79b-4d69-4e52-9769-2c4725f562d5/embed" allowfullscreen webkitallowfullscreen mozallowfullscreen oallowfullscreen msallowfullscreen></iframe>
         <p style="font-size:17px; color: white"><br>The tree planting map shows the schedule of each street that will be planted. There are streets where tree planting is completed. For the rest, the schedule time information is shown in the popup on hover or can be visualized by color. When prioritising where and when to plant, it is important to spend resources on the streets that are most in need. For example, which street has highest intensity of people where low canopy cover exsits; which streets will gain more by planting trees etc.</p>
