@@ -32,9 +32,9 @@ map.on('load', function() {
         var coordinates = e.features[0].geometry.coordinates.slice();
 
         var description = '<br>' + 'Name: ' + e.features[0].properties.CommonName+ 
-                            '<br>Familyaaa: ' + e.features[0].properties.Family+ 
+                            '<br>Family: ' + e.features[0].properties.Family+ 
                             '<br>Date Planted: ' + e.features[0].properties.DatePlanted + 
-                            '<br>Useful Life Expectency: ' + e.features[0].properties.UsefulLifeExpectency + '<br>';
+                            '<br>Useful Life Expectancy: ' + e.features[0].properties.UsefulLifeExpectency + '<br>';
 
         // Ensure that if the map is zoomed out such that multiple
         // copies of the feature are visible, the popup appears

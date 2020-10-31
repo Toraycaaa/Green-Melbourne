@@ -449,7 +449,7 @@
         <h2 class="ui olive header" >Statistic</h2>
         <hr style="border:1 dashed #987cb9" width="100%" color=#76AD3A SIZE=1>
         <h3 style="font-size:17px; color:white">Figures about current trees in Melbourne</h3>
-        <p style="font-size:19px; color:#989898">Tree's information including the number of trees are planted each year and whether they are planted in park or street, tree's life expectency, and common genus are shown in the graph below, respectively.</p>
+        <p style="font-size:19px; color:#989898">The count of trees planted each year, their location , life expectancy and related information can be infered from the graph below. </p>
 
         <br />
         <!--Tableau chart-->
@@ -470,15 +470,15 @@
         <hr style="border:1 dashed #987cb9" width="100%" color=#76AD3A SIZE=1>
         <h3 style="font-size:17px; color:white">Future planting schedule</h3>
 
-        <p style="font-size:19px; color:#989898"> The Planting schedule shows when each street will be planted and the instensity of the planting will be. To maximise the use of the map, you can:</p>
+        <p style="font-size:19px; color:#989898"> The planting schedule shows when each street will be planted. To maximise the use of the map, you can:</p>
         <p style="font-size:19px; color:#989898">- <b>Hover</b> street will show a popup which includes schedule time and street name<br>
-        - The area schedule count will dynamically show the number of schedules for the area shown in the maps when you <b>Zoom</b> in or out<br>
-        - To filter streets by schedule time, <b>Select</b> the schedule time in the legend<br></p>
+        - The area schedule count will dynamically show the number of schedules for the rea, the area can be adjusted by <b>Zoom and Move.</b><br>
+        - To filter streets by schedule time, <b>select</b> the schedule time in the legend<br></p>
         <i class="arrow inverted circle right icon"></i>&nbsp;<a href="https://www.melbourne.vic.gov.au/community/greening-the-city/urban-forest/pages/urban-forest-precinct-plans.aspx">Find out more Precinct Plans</a><br>
 
         <br />
         <iframe width="100%" height="520" frameborder="0" src="https://lisalisalisa.carto.com/builder/8bdad79b-4d69-4e52-9769-2c4725f562d5/embed" allowfullscreen webkitallowfullscreen mozallowfullscreen oallowfullscreen msallowfullscreen></iframe>
-        <p style="font-size:17px; color: #989898"><br>The tree planting map shows the schedule of each street that will be planted. There are streets where tree planting is completed. For the rest, the schedule time information is shown in the popup on hover or can be visualized by color. When prioritising where and when to plant, it is important to spend resources on the streets that are most in need. For example, which street has highest intensity of people where low canopy cover exsits; which streets will gain more by planting trees etc.</p>
+        <p style="font-size:17px; color: #989898"><br>The tree planting map shows the schedule of plantation over the next decade and the planned location. The schedule time information is shown in the popup on hover or can be visualized according to the legend. When prioritising where and when to plant, it is important to spend resources on the streets that are truely in need. For example, which street has highest intensity of people where low canopy cover exsits; which streets will gain more benefit from planting trees etc.</p>
        
     </div>
     <br />
@@ -552,7 +552,7 @@
                 e.stopPropagation();
 
                 var visibility = map.getLayoutProperty(clickedLayer, 'visibility');
-                console.log('可见吗？' + visibility)
+                console.log('？' + visibility)
 
                 // toggle layer visibility by changing the layout object's visibility property
                 if (visibility === 'visible') {
