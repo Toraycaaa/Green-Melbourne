@@ -558,7 +558,7 @@
                 if (visibility === 'visible') {
                         map.setLayoutProperty(clickedLayer, 'visibility', 'none');
                         this.setAttribute("class","item");
-                        console.log('bukejian');
+                        
                         current_visible_ids.delete(clickedLayer);
                 } else {
                     if (current_visible_layer != 'age'){
@@ -567,7 +567,7 @@
                             var temptag = document.getElementById(x)
                             map.setLayoutProperty(x, 'visibility', 'none');
                             temptag.setAttribute("class","item");
-                            console.log('closeothers');
+                           
                         }
                         current_visible_ids = new Set([]);
                         current_visible_layer = 'age';
@@ -577,7 +577,7 @@
                     this.classList.add("item")
                     //this.setAttribute("color","black");
                     map.setLayoutProperty(clickedLayer, 'visibility', 'visible');
-                    console.log('kejian')
+                
                 }
             };
 
@@ -586,7 +586,6 @@
             //if(i != 0){
             //    map.setLayoutProperty(id, 'visibility', 'none');
             //    link.setAttribute("class","item");
-            //    console.log('bukejian')
             //}
         }
 
@@ -609,13 +608,13 @@
                 e.stopPropagation();
 
                 var visibility = map.getLayoutProperty(clickedLayer, 'visibility');
-                console.log('可见吗？' + visibility)
+                
 
                 // toggle layer visibility by changing the layout object's visibility property
                 if (visibility === 'visible') {
                         map.setLayoutProperty(clickedLayer, 'visibility', 'none');
                         this.setAttribute("class","item");
-                        console.log('bukejian');
+                        
                         current_visible_ids.delete(clickedLayer);
                 } else {
                     if (current_visible_layer != menu[1]){
@@ -634,7 +633,7 @@
                     this.classList.add("item")
                     //this.setAttribute("color","black");
                     map.setLayoutProperty(clickedLayer, 'visibility', 'visible');
-                    console.log('kejian')
+                    
                 }
             };
 
@@ -642,7 +641,7 @@
             layers.appendChild(link);
             map.setLayoutProperty(id, 'visibility', 'none');
             link.setAttribute("class","item");
-            console.log('bukejian')
+            
         }
 
         // enumerate ids of the layers
@@ -666,13 +665,13 @@
                 e.stopPropagation();
 
                 var visibility = map.getLayoutProperty(clickedLayer, 'visibility');
-                console.log('可见吗？' + visibility)
+                
 
                 // toggle layer visibility by changing the layout object's visibility property
                 if (visibility === 'visible') {
                         map.setLayoutProperty(clickedLayer, 'visibility', 'none');
                         this.setAttribute("class","item");
-                        console.log('bukejian');
+                       
                         //current_visible_ids.delete(clickedLayer);
                 } else {
                     /*if (current_visible_layer != menu[3]){
@@ -691,13 +690,13 @@
                     this.classList.add("item")
                     //this.setAttribute("color","black");
                     map.setLayoutProperty(clickedLayer, 'visibility', 'visible');
-                    console.log('kejian')
+                    
                 }
         };
  
             map.setLayoutProperty(id, 'visibility', 'none');
             link.setAttribute("class","item");
-            console.log('bukejian')
+            
             var layers = document.getElementById('soil_type');
             layers.appendChild(link);
         }
@@ -723,13 +722,13 @@
                 e.stopPropagation();
 
                 var visibility = map.getLayoutProperty(clickedLayer, 'visibility');
-                console.log('可见吗？' + visibility)
+                
 
                 // toggle layer visibility by changing the layout object's visibility property
                 if (visibility === 'visible') {
                         map.setLayoutProperty(clickedLayer, 'visibility', 'none');
                         this.setAttribute("class","item");
-                        console.log('bukejian');
+                        
                         current_visible_ids.delete(clickedLayer);
                 } else {
                 console.log('current_visible_layer');
@@ -750,13 +749,13 @@
                     this.classList.add("item")
                     //this.setAttribute("color","black");
                     map.setLayoutProperty(clickedLayer, 'visibility', 'visible');
-                    console.log('kejian')
+                   
                 }
             };
 
             map.setLayoutProperty(id, 'visibility', 'none');
             link.setAttribute("class","item");
-            console.log('bukejian')
+            
             var layers = document.getElementById('year');
             layers.appendChild(link);
         }
