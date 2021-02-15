@@ -1,3 +1,6 @@
+.footer{
+  width:100% !important;
+}
 #map {
   position: relative;
   top: 0;
