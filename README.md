@@ -61,7 +61,7 @@ None
 
 ### Framework & API
 
-- Sematic UI
+- Semantic UI
 - jQuery
 - Mapbox
 - Tableau
