@@ -1,7 +1,5 @@
 # Green Melbourne
 
-***
-
 ## Introduction
 
 Environment is one of the interesting topics for the Melbourne city government. Trees are a major part of this 
